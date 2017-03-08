@@ -1,7 +1,7 @@
 # Health Tracker Project
 
 This is an optional project in the Front-End Nanodegree Program and consists of a single page app, developed using the JavaScript library Backbone.js, that tracks the user's calorie intake.
-Typing food names into the search filed will display a list of matching foods as provided by the health API. Users will be able to select an item from the list and the item will be added to the list of foods the user is tracking.
+Typing food names into the search field will display a list of matching foods as provided by the health API. Users will be able to select an item from the list and the item will be added to the list of foods the user is tracking.
 The total calorie count will also update to reflect the new daily total.
 
 ## Getting Started
@@ -21,7 +21,7 @@ To load the app, download a copy of the project to your local machine and open t
 
 ## Notes
 
-A single page app that tracks the user's calorie intake.
+A single page app that lists a total calories count.
 
 ## License
 

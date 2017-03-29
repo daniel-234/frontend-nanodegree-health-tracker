@@ -6,7 +6,7 @@ The total calorie count will also update to reflect the new daily total.
 
 ## Getting Started
 
-To load the app, download a copy of the project to your local machine and open the file index.html with your browser.
+To load the app, download a copy of the project to your local machine and open the file index.html with your browser. You should replace the API key with your own key, after getting it from [Nutritionix](https://www.nutritionix.com/). Alternatively, you can load the app online from this [GitHub Pages project repository](https://daniel-234.github.io/frontend-nanodegree-health-tracker/).
 
 ## Built With
 

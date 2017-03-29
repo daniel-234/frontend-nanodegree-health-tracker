@@ -10,9 +10,7 @@ To load the app, download a copy of the project to your local machine and open t
 
 ## Built With
 
-* [Backbone.js](http://backbonejs.org/) - A JavaScript framework that gives structure to web applications
 * [jQuery](http://jquery.com/) - A JavaScript library for simpler HTML manipulation and event handling
-* [Underscore.js](http://underscorejs.org/) - A JavaScript API that provides useful functional programming helpers
 * [Nutritionix API](https://developer.nutritionix.com/docs/v1_1) - The third party API used to provide information to the user about calories
 
 ## Author
@@ -21,7 +19,7 @@ To load the app, download a copy of the project to your local machine and open t
 
 ## Notes
 
-A single page app that lists a total calories count.
+A single page app that loads a food item taken from health API Nutritionix and displays the result on the page.
 
 ## License
 
@@ -29,3 +27,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
+* As a first step I wanted to get accustomed with the Nutritionix API search, so I just made an AJAX call to it and displayed the first item that was returned from the result. The query I used can be found on the Nutritionix API v1.1 Documentation Quick Start guide:
+* [Nutritionix API v1.1 Documentation - Quick Start](https://developer.nutritionix.com/docs/v1_1)
+* I took some code from these two answers on Stackoverflow to make the AJAX request:
+* [Stackoverflow - jQuery async and JSON data](http://stackoverflow.com/questions/5644451/jquery-async-and-json-data)
+* [Stackoverflow - Append AJAX result to div](http://stackoverflow.com/questions/29432997/append-ajax-result-to-div)

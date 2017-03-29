@@ -1,40 +1,45 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Backbone.jd - TodoMVC</title>
-		<!-- <link rel="stylesheet" href="assets/style.css"> -->
+		<title>Health Tracker</title>
+		<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 	</head>
 	<body>
-		<section id="todoapp">
-			<header id="header">
-				<h1>todos</h1>
-				<input id="new-todo" placeholder="What needs to be done?" autofocus>
-			</header>
-			<section id="main">
-				<input id="toggle-all" type="checkbox">
-				<label for="toggle-all">Mark all as complete</label>
-				<ul id="todo-list"></ul>
-			</section>
-			<footer id="footer"></footer>
-		</section>
-		<div id="info">
-			<p>Double click to edit a todo</p>
-			<p>Written by ...</p>
-		</div>
-		<script type="text/template" id="item-template"></script>
-		<script type="text/template" id="stats-template"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
-	    <script src="js/lib/backbone.localStorage.js"></script>
-	    <script src="js/models/todo.js"></script>
-	    <script src="js/collections/todos.js"></script>
-	    <script src="js/views/todos.js"></script>
-	    <script src="js/views/todos.js"></script>
-	    <script src="js/routers/router.js"></script>
-		<script src="js/app.js"></script>
+		<!-- Create a place to put the Nutritionix query results in -->
+		<div id="items"></div>
+		<!-- jQuery Google CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<!-- jQuery local fallback -->
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				function processData(response) {
+					console.log(response.hits[0].fields);
+					console.log('Brand name: ' + response.hits[0].fields.brand_name);
+					console.log('Item name: ' + response.hits[0].fields.item_name);
+					console.log('Calories: ' + response.hits[0].fields.nf_calories);
+
+					var foodItem = 'Brand name: ' + response.hits[0].fields.brand_name + ' ; ' +
+						'Item name: ' + response.hits[0].fields.item_name + ' ; ' +
+						'Calories: ' + response.hits[0].fields.nf_calories;
+					$('#items').append(foodItem);
+				}
+
+				retrieveValues();
+
+				function retrieveValues() {
+					var queryUrl = 'https://api.nutritionix.com/v1_1/search/mcdonalds?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=497ef47e&appKey=790e824a496fcc65e9fa3132a5d2d8fb';
+					$.ajax({
+						url: queryUrl,
+						type: 'get',
+						dataType: 'json',
+						success: processData
+					});
+				}
+			});
+		</script>
 	</body>
 </html>

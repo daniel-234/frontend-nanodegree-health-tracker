@@ -10,6 +10,7 @@ To load the app, download a copy of the project to your local machine and open t
 
 ## Built With
 
+* [UnderscoreJS](http://underscorejs.org/) - A JavaScript library that provides a set of useful functional programming helpers
 * [BackboneJS](http://backbonejs.org/) - A framework to supply structure to JavaScript-heavy applications
 * [JasmineJS](https://jasmine.github.io/index.html) - Behavior-driven development framework for testing JavaScript code
 * [jQuery](http://jquery.com/) - A JavaScript library for simpler HTML manipulation and event handling

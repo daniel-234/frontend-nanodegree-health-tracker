@@ -14,10 +14,10 @@ $(function() {
 	 describe('New food items tests', function() {
 	 	it('can be created with default attributes for their values', function() {
 	 		var foodItem = new FoodItem();
-	 		expect(foodItem.get('brandName').toBe(''));
-	 		expect(foodItem.get('itemName').toBe(''));
-	 		expect(foodItem.get('itemCalories').toBe(''));
-	 		expect(foodItem.get('itemQuantity').toBe(1));
+	 		expect(foodItem.get('brandName')).toBe('');
+	 		expect(foodItem.get('itemName')).toBe('');
+	 		expect(foodItem.get('itemCalories')).toBe('');
+	 		expect(foodItem.get('itemQuantity')).toBe(1);
 	 	});
 	 });
 });

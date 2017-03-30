@@ -10,6 +10,8 @@ To load the app, download a copy of the project to your local machine and open t
 
 ## Built With
 
+* [BackboneJS](http://backbonejs.org/) - A framework to supply structure to JavaScript-heavy applications
+* [JasmineJS](https://jasmine.github.io/index.html) - Behavior-driven development framework for testing JavaScript code
 * [jQuery](http://jquery.com/) - A JavaScript library for simpler HTML manipulation and event handling
 * [Nutritionix API](https://developer.nutritionix.com/docs/v1_1) - The third party API used to provide information to the user about calories
 

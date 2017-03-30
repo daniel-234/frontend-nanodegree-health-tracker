@@ -17,14 +17,17 @@
 		<script>
 			$(document).ready(function() {
 				function processData(response) {
+					console.log(response);
 					console.log(response.hits[0].fields);
 					console.log('Brand name: ' + response.hits[0].fields.brand_name);
 					console.log('Item name: ' + response.hits[0].fields.item_name);
 					console.log('Calories: ' + response.hits[0].fields.nf_calories);
+					console.log('Serving size quantity: ' + response.hits[0].fields.nf_serving_size_qty);
 
 					var foodItem = 'Brand name: ' + response.hits[0].fields.brand_name + ' ; ' +
 						'Item name: ' + response.hits[0].fields.item_name + ' ; ' +
-						'Calories: ' + response.hits[0].fields.nf_calories;
+						'Calories: ' + response.hits[0].fields.nf_calories + ' ; ' +
+						'Serving quantity: ' + response.hits[0].fields.nf_serving_size_qty;
 					$('#items').append(foodItem);
 				}
 

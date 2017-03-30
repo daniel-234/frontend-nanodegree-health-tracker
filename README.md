@@ -32,3 +32,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * I took some code from these two answers on Stackoverflow to make the AJAX request:
 * [Stackoverflow - jQuery async and JSON data](http://stackoverflow.com/questions/5644451/jquery-async-and-json-data)
 * [Stackoverflow - Append AJAX result to div](http://stackoverflow.com/questions/29432997/append-ajax-result-to-div)
+* A new application always starts with a blank sheet. As I decided which steps to follow to build this one, I worked through examples and advices in the book 'Developing Backbone.js Applications' written by Addy Osmani. Much of the initial code is taken from that book and as I learned to develop my application following a Behavior Driven Development (BDD) approach I replicated some of his code:
+* [Addy Osmani - Developing Backbone.js Applications](https://addyosmani.com/backbone-fundamentals/)

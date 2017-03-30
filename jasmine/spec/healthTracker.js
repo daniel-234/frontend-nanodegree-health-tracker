@@ -19,5 +19,14 @@ $(function() {
 	 		expect(foodItem.get('itemCalories')).toBe('');
 	 		expect(foodItem.get('itemQuantity')).toBe(1);
 	 	});
+
+	 	it('can be created with overridden attributes for their values', function() {
+	 		var foodItem = new FoodItem();
+	 		foodItem.set({
+	 			itemQuantity: 5
+	 		});
+	 		expect(foodItem.get('brandName')).toBe('');
+	 		expect(foodItem.get('itemQuantity')).toBe(5);
+	 	});
 	 });
 });

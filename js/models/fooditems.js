@@ -1,4 +1,4 @@
-window.FoodItem = Backbone.Model.extend({
+var FoodItem = Backbone.Model.extend({
 	defaults: {
 		brandName: '',
 		itemName: '',

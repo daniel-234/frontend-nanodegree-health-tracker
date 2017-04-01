@@ -15,32 +15,36 @@
  * resides is [Unit Testing, Jasmine - Suites, Specs and Spies](
  * https://addyosmani.com/backbone-fundamentals/#suites-specs-spies).
  */
-describe('New food items tests', function() {
+describe('New food items', function() {
 	// Place the instance of FoodItem in the same Functional Scope
-	var foodItem = new FoodItem();
+	var item1;
+
+	beforeEach(function() {
+		item1 = new FoodItem();
+	});
 
 	it('should be correctly defined', function() {
-		expect(foodItem).toBeDefined();
+		expect(item1).toBeDefined();
 	});
 
  	it('can be created with default attributes for their values', function() {
- 		expect(foodItem.get('brandName')).toBe('');
- 		expect(foodItem.get('itemName')).toBe('');
- 		expect(foodItem.get('itemCalories')).toBe('');
- 		expect(foodItem.get('itemQuantity')).toBe(1);
+ 		expect(item1.get('brandName')).toBe('');
+ 		expect(item1.get('itemName')).toBe('');
+ 		expect(item1.get('itemCalories')).toBe('');
+ 		expect(item1.get('itemQuantity')).toBe(1);
  	});
 
  	it('can be created with overridden attributes for their values', function() {
- 		foodItem.set({
+ 		item1.set({
  			itemQuantity: 5
  		});
- 		expect(foodItem.get('brandName')).toBe('');
- 		expect(foodItem.get('itemQuantity')).toBe(5);
+ 		expect(item1.get('brandName')).toBe('');
+ 		expect(item1.get('itemQuantity')).toBe(5);
  	});
 });
 
-/* The second test helps test an AJAX request and verify that it was both calling
- * the correct URL and executed a callback.
+/* The second test helps mock an AJAX request using spies and test both the code
+ * that initiates the AJAX request and the code executed upon its completion.
  *
  * Code taken from Addy Osmani's book 'Developing Backbone.js Applications' and
  * adapted for this application. The actual section of the book where this code
@@ -50,7 +54,7 @@ describe('New food items tests', function() {
 describe('An AJAX request', function() {
 	// Fake an AJAX request and verify that the request was both calling the
 	// correct URL and executed a callback where one was provided
-	it('the callback should be executed on success', function() {
+	it('should execute a callback on success', function() {
 		// Call a passed function when a spy has been called
  		spyOn($, 'ajax').and.callFake(function(options) {
  			options.success();
@@ -61,6 +65,7 @@ describe('An AJAX request', function() {
 
  		// Execute the spy callback if the request is successful
  		getFoodItem(callback);
+ 		// retrieveValues(callback);
 
  		// Verify that the url of the most recent call matches
  		// the expected FoodItem
@@ -68,14 +73,14 @@ describe('An AJAX request', function() {
 
  		expect(callback).toHaveBeenCalled();
  	});
-});
 
-function getFoodItem(callback) {
-	var queryUrl = '/fooditems/';
-	$.ajax({
-		url: queryUrl,
-		type: 'get',
-		dataType: 'json',
-		success: callback
-	});
-}
+ 	function getFoodItem(callback) {
+		var queryUrl = '/fooditems/';
+		$.ajax({
+			url: queryUrl,
+			type: 'get',
+			dataType: 'json',
+			success: callback
+		});
+	}
+});

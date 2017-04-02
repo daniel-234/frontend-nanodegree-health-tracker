@@ -97,7 +97,7 @@ describe('An AJAX request', function() {
  * resides is [Unit Testing, Jasmine - Suites, Specs and Spies](
  * https://addyosmani.com/backbone-fundamentals/#suites-specs-spies).
  */
-describe('A foodItems collection', function() {
+describe('A FoodItems Collection', function() {
 	var aFoodList;
 
 	beforeEach(function() {
@@ -108,7 +108,7 @@ describe('A foodItems collection', function() {
 		expect(aFoodList.length).toBe(0);
 	});
 
-	it('can add model instances', function() {
+	it('can add Model instances', function() {
 		aFoodList.add({
 			brandName: 'Coca Cola'
 		});

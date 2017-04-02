@@ -7,6 +7,9 @@ var FoodItem = Backbone.Model.extend({
 	}
 });
 
+var FoodItemList = Backbone.Collection.extend({
+	model: FoodItem
+});
 
 var data;
 

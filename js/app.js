@@ -1,4 +1,4 @@
-var data;
+// var data;
 
 var FoodItem = Backbone.Model.extend({
 	defaults: {
@@ -16,10 +16,25 @@ var FoodItemList = Backbone.Collection.extend({
 	model: FoodItem
 });
 
+var foodListCollection = new FoodItemList();
+
 function processData(response) {
-	data = response;
-	console.log(data);
-	console.log(response);
+	// Add a Model to the Collection for each of the 20 query result
+	for(var i = 0; i < 20; i++) {
+		foodListCollection.add({
+			brandName: response.hits[i].fields.brand_name,
+			itemName: response.hits[i].fields.item_name,
+			itemCalories: response.hits[i].fields.nf_calories,
+			itemQuantity: response.hits[i].fields.nf_serving_size_qty
+		});
+	}
+
+	// Log each itemName attribute
+	foodListCollection.forEach(function(model) {
+		console.log(model.get('itemName'));
+	});
+
+
 	console.log(response.hits[0].fields);
 	console.log('Brand name: ' + response.hits[0].fields.brand_name);
 	console.log('Item name: ' + response.hits[0].fields.item_name);
@@ -34,6 +49,8 @@ function processData(response) {
 }
 
 retrieveValues(processData);
+
+// console.log(foodListCollection);
 
 function retrieveValues(callback) {
 	var queryUrl = 'https://api.nutritionix.com/v1_1/search/mcdonalds?results=0:20&' +

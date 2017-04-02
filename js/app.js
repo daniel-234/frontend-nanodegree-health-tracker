@@ -1,3 +1,5 @@
+var data;
+
 var FoodItem = Backbone.Model.extend({
 	defaults: {
 		brandName: '',
@@ -7,11 +9,12 @@ var FoodItem = Backbone.Model.extend({
 	}
 });
 
+var foodItem = new FoodItem();
+console.log(foodItem.get('itemQuantity'));
+
 var FoodItemList = Backbone.Collection.extend({
 	model: FoodItem
 });
-
-var data;
 
 function processData(response) {
 	data = response;
@@ -43,5 +46,3 @@ function retrieveValues(callback) {
 	});
 }
 
-var foodItem = new FoodItem();
-console.log(foodItem.get('itemQuantity'));

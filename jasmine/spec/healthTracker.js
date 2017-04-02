@@ -108,7 +108,7 @@ describe('A FoodItems Collection', function() {
 		expect(aFoodList.length).toBe(0);
 	});
 
-	it('can add Model instances', function() {
+	it('can add Model instances with overridden attributes', function() {
 		aFoodList.add({
 			brandName: 'Coca Cola'
 		});
@@ -118,5 +118,18 @@ describe('A FoodItems Collection', function() {
 		expect(aFoodList.models[0].get('itemName')).toBe('');
 		expect(aFoodList.models[0].get('itemCalories')).toBe('');
 		expect(aFoodList.models[0].get('itemQuantity')).toBe(1);
+
+		aFoodList.add({
+			brandName: 'McDonald\'s',
+			itemName: 'McChicken',
+			itemCalories: 'a lot',
+			itemQuantity: 5
+		});
+
+		expect(aFoodList.length).toBe(2);
+		expect(aFoodList.models[1].get('brandName')).toBe('McDonald\'s');
+		expect(aFoodList.models[1].get('itemName')).toBe('McChicken');
+		expect(aFoodList.models[1].get('itemCalories')).toBe('a lot');
+		expect(aFoodList.models[1].get('itemQuantity')).toBe(5);
 	});
 });

@@ -7,7 +7,12 @@ var FoodItem = Backbone.Model.extend({
 	}
 });
 
+
+var data;
+
 function processData(response) {
+	data = response;
+	console.log(data);
 	console.log(response);
 	console.log(response.hits[0].fields);
 	console.log('Brand name: ' + response.hits[0].fields.brand_name);
@@ -25,7 +30,8 @@ function processData(response) {
 retrieveValues(processData);
 
 function retrieveValues(callback) {
-	var queryUrl = 'https://api.nutritionix.com/v1_1/search/mcdonalds?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=497ef47e&appKey=790e824a496fcc65e9fa3132a5d2d8fb';
+	var queryUrl = 'https://api.nutritionix.com/v1_1/search/mcdonalds?results=0:20&' +
+		'fields=item_name,brand_name,item_id,nf_calories&appId=497ef47e&appKey=790e824a496fcc65e9fa3132a5d2d8fb';
 	$.ajax({
 		url: queryUrl,
 		type: 'get',

@@ -27,6 +27,10 @@ describe('New food items', function() {
 		expect(item1).toBeDefined();
 	});
 
+	it('should be an instance of FoodItem', function() {
+		expect(item1 instanceof FoodItem).toBe(true);
+	});
+
  	it('can be created with default attributes for their values', function() {
  		expect(item1.get('brandName')).toBe('');
  		expect(item1.get('itemName')).toBe('');
@@ -62,20 +66,20 @@ describe('An AJAX request', function() {
 
  		// Create a new spy
  		var callback = jasmine.createSpy();
+ 		// Create a query
+ 		var queryUrl = '/fooditems/';
 
  		// Execute the spy callback if the request is successful
- 		getFoodItem(callback);
- 		// retrieveValues(callback);
+ 		getFoodItem(queryUrl, callback);
 
  		// Verify that the url of the most recent call matches
  		// the expected FoodItem
- 		expect($.ajax.calls.mostRecent().args[0]['url']).toEqual('/fooditems/');
+ 		expect($.ajax.calls.mostRecent().args[0]['url']).toEqual(queryUrl);
 
  		expect(callback).toHaveBeenCalled();
  	});
 
- 	function getFoodItem(callback) {
-		var queryUrl = '/fooditems/';
+ 	function getFoodItem(queryUrl, callback) {
 		$.ajax({
 			url: queryUrl,
 			type: 'get',
@@ -83,4 +87,36 @@ describe('An AJAX request', function() {
 			success: callback
 		});
 	}
+});
+
+/*
+ * Test a Backbone collection of foodItems Models.
+ *
+ * Code taken from Addy Osmani's book 'Developing Backbone.js Applications' and
+ * adapted for this application. The actual section of the book where this code
+ * resides is [Unit Testing, Jasmine - Suites, Specs and Spies](
+ * https://addyosmani.com/backbone-fundamentals/#suites-specs-spies).
+ */
+describe('A foodItems collection', function() {
+	var aFoodList;
+
+	beforeEach(function() {
+		aFoodList = new FoodItemList();
+	});
+
+	it('has no items when instantiated', function() {
+		expect(aFoodList.length).toBe(0);
+	});
+
+	it('can add model instances', function() {
+		aFoodList.add({
+			brandName: 'Coca Cola'
+		});
+
+		expect(aFoodList.length).toBe(1);
+		expect(aFoodList.models[0].get('brandName')).toBe('Coca Cola');
+		expect(aFoodList.models[0].get('itemName')).toBe('');
+		expect(aFoodList.models[0].get('itemCalories')).toBe('');
+		expect(aFoodList.models[0].get('itemQuantity')).toBe(1);
+	});
 });

@@ -52,6 +52,8 @@ function processData(response) {
 
 retrieveValues(processData);
 
+// Code taken from file CollectionViewSpec.js found in the
+// Backbone course hosted in 'teaching-materials.org'.
 var FoodItemView = Backbone.View.extend({
 	render: function() {
 		var source = $('#food-template').html();

@@ -18,6 +18,16 @@ var FoodItemList = Backbone.Collection.extend({
 
 var foodListCollection = new FoodItemList();
 
+var FoodItemView = Backbone.Collection.extend({
+	render: function() {
+		return this;
+	}
+});
+
+var foodItemView = new foodItemView({
+	collection: foodListCollection
+});
+
 function processData(response) {
 	// Add a Model to the Collection for each of the 20 query result
 	for(var i = 0; i < 20; i++) {

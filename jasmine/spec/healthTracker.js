@@ -89,8 +89,7 @@ describe('An AJAX request', function() {
 	}
 });
 
-/*
- * Test a Backbone collection of foodItems Models.
+/* Test a Backbone collection of foodItems Models.
  *
  * Code taken from Addy Osmani's book 'Developing Backbone.js Applications' and
  * adapted for this application. The actual section of the book where this code
@@ -131,5 +130,32 @@ describe('A FoodItems Collection', function() {
 		expect(aFoodList.models[1].get('itemName')).toBe('McChicken');
 		expect(aFoodList.models[1].get('itemCalories')).toBe('a lot');
 		expect(aFoodList.models[1].get('itemQuantity')).toBe(5);
+	});
+});
+
+/* Test a Backbone View of a Collection.
+ *
+ * Code taken from Addy Osmani's book and other online tutorials to start
+ * practicing with this material.
+ */
+describe('A Backbone View of a Collection', function() {
+	var foodItemView;
+	beforeEach(function() {
+		foodItemView = new FoodItemView({
+			collection: foodListCollection
+		});
+	});
+
+	it('has a .render function', function() {
+		expect(foodItemView).toBeDefined();
+	});
+
+	// Code taken from file CollectionViewSpec.js found in the
+	// Backbone course hosted in 'teaching-materials.org'.
+	it('its .render function also returns this', function() {
+		var AnotherFoodItemView = Backbone.View.extend();
+		var returnExpectation = foodItemView.render();
+		expect(foodItemView.__proto__.render).not.toEqual(AnotherFoodItemView.__proto__.render);
+		expect(returnExpectation).toEqual(foodItemView);
 	});
 });

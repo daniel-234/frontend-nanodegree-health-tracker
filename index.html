@@ -7,8 +7,6 @@
 		<title>Health Tracker</title>
 	</head>
 	<body>
-		<!-- Place the Nutritionix query results -->
-		<div id="items"></div>
 		<!-- Library files -->
 		<!-- jQuery Google CDN -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -16,7 +14,18 @@
 		<script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/lib/underscore-min.js"></script>
 		<script src="js/lib/backbone-min.js"></script>
+		<script src="js/lib/handlebars.js"></script>
 		<!-- Application files -->
 		<script src="js/app.js"></script>
+
+		<!-- The handlebars template for the foodItem view -->
+		<script id="food-template" type="text/x-handlebars-template">
+			{{#each people}}
+				<div class="food">
+					{{ firstName }}
+				</div>
+			{{/each}}
+		</script>
+		<div id="aFoodList"></div>
 	</body>
 </html>

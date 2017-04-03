@@ -18,16 +18,6 @@ var FoodItemList = Backbone.Collection.extend({
 
 var foodListCollection = new FoodItemList();
 
-var FoodItemView = Backbone.Collection.extend({
-	render: function() {
-		return this;
-	}
-});
-
-var foodItemView = new foodItemView({
-	collection: foodListCollection
-});
-
 function processData(response) {
 	// Add a Model to the Collection for each of the 20 query result
 	for(var i = 0; i < 20; i++) {
@@ -43,6 +33,8 @@ function processData(response) {
 	foodListCollection.forEach(function(model) {
 		console.log(model.get('itemName'));
 	});
+
+	console.log(foodListCollection.toJSON());
 
 
 	console.log(response.hits[0].fields);
@@ -60,6 +52,20 @@ function processData(response) {
 
 retrieveValues(processData);
 
+var FoodItemView = Backbone.View.extend({
+	render: function() {
+		var source = $('#food-template').html();
+		var template = Handlebars.compile(source);
+		var rendered = template({foodListCollection: this.collection.toJSON()});
+		this.$el.append(rendered);
+		return this;
+	}
+});
+
+var foodItemView = new FoodItemView({
+	collection: foodListCollection
+});
+
 // console.log(foodListCollection);
 
 function retrieveValues(callback) {
@@ -73,3 +79,6 @@ function retrieveValues(callback) {
 	});
 }
 
+$(document).ready(function() {
+	$('#aFoodList').append(foodItemView.render().$el);
+});

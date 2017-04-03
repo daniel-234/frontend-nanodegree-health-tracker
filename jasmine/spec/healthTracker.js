@@ -154,8 +154,18 @@ describe('A Backbone View of a Collection', function() {
 	// Backbone course hosted in 'teaching-materials.org'.
 	it('its .render function also returns this', function() {
 		var AnotherFoodItemView = Backbone.View.extend();
+		console.log(foodItemView);
 		var returnExpectation = foodItemView.render();
 		expect(foodItemView.__proto__.render).not.toEqual(AnotherFoodItemView.__proto__.render);
 		expect(returnExpectation).toEqual(foodItemView);
+	});
+
+	it('compiles a Handlebars template', function() {
+		spyOn(Handlebars.helpers, 'each').and.callThrough();
+		spyOn(Handlebars, 'compile').and.callThrough();
+
+		foodItemView.render();
+		expect(Handlebars.compile).toHaveBeenCalled();
+		expect(Handlebars.helpers.each).toHaveBeenCalled();
 	});
 });

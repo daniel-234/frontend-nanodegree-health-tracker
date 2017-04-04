@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Health Tracker</title>
-	</head>
-	<body>
-		<!-- Library files -->
-		<!-- jQuery Google CDN -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<!-- jQuery local fallback -->
-		<script src="js/jquery-3.1.1.min.js"></script>
-		<script src="js/lib/underscore-min.js"></script>
-		<script src="js/lib/backbone-min.js"></script>
-		<script src="js/lib/handlebars.js"></script>
-		<!-- Application files -->
-		<script src="js/app.js"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exercise 4 - Rendering a Template in a Collection</title>
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Bootstrap CSS local fallback -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 
-		<!-- The handlebars template for the foodItem view -->
+	<!-- include library files here... -->
+	<script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="lib/underscore-min.js"></script>
+	<script type="text/javascript" src="lib/backbone-min.js"></script>
+	<script type="text/javascript" src="lib/handlebars.js"></script>
+
+	<!-- include application files here... -->
+	<script type="text/javascript" src="src/app.js"></script>
+</head>
+<body>
+	<section>
+		<h1>Calories</h1>
+		<br>
+
+		<!-- The handlebars template for the rolodex view -->
 		<script id="food-template" type="text/x-handlebars-template">
-			{{#each people}}
+			{{#each foodItemsList}}
 				<div class="food">
-					{{ firstName }}
+					{{ itemName }} : {{ itemCalories}} calories
 				</div>
 			{{/each}}
 		</script>
-		<div id="aFoodList"></div>
-	</body>
-</html>
+
+		<script id="calories-sum" type="text/x-handlebars-template">
+			<div class="calories">
+				Calories count: {{ calories }}
+			</div>
+		</script>
+	</section>
+</body>

@@ -41,3 +41,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - How do I return the response from an asynchronous call?](http://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call)
 * To develop the tests for the View I took some code from a course on Backbone developed by [Girl Develop It SF](https://www.meetup.com/Girl-Develop-It-San-Francisco/) and tried to adapt it to my needs:
 * [Backbone 101](http://www.teaching-materials.org/backbone/#/)
+* The food and calories reported in the app were taken from the CalorieKing database:
+* [CalorieKing - Food Database](http://www.calorieking.com/foods/)

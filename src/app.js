@@ -82,5 +82,5 @@ function retrieveValues(callback) {
 }
 
 $(document).ready(function() {
-	$('#aFoodList').append(foodItemView.render().$el);
+	$('body').append(foodItemView.render().$el);
 });

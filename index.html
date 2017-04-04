@@ -4,11 +4,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Exercise 4 - Rendering a Template in a Collection</title>
-	<!-- Bootstrap CSS CDN -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- Bootstrap CSS local fallback -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- include library files here... -->
@@ -29,7 +24,7 @@
 		<script id="food-template" type="text/x-handlebars-template">
 			{{#each foodItemsList}}
 				<div class="food">
-					{{ itemName }} : {{ itemCalories}} calories
+					{{ brandName }} {{ itemName }} : {{ itemCalories}} calories
 				</div>
 			{{/each}}
 		</script>

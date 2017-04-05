@@ -1,6 +1,7 @@
 /* The skeleton of this code was taken from a test guided exercise that I did
- * to learn Backbone. The code is almost identical to that of the exercise and
- * has just been adapted to the purpose of this app.
+ * to learn Backbone.
+ * The code is almost identical to that of the exercise and has just been adapted
+ * to the purpose of this app (http://www.teaching-materials.org/backbone/#/).
  */
 var totalCalories = 0;
 

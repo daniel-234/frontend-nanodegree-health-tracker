@@ -39,7 +39,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Addy Osmani - Developing Backbone.js Applications](https://addyosmani.com/backbone-fundamentals/)
 * A very helpful resource on AJAX requests:
 * [Stackoverflow - How do I return the response from an asynchronous call?](http://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call)
-* To develop the tests for the View I took the code from a course on Backbone developed by [Girl Develop It SF](https://www.meetup.com/Girl-Develop-It-San-Francisco/) and tried to adapt it to my needs:
+* To develop the tests for the View and to adjust the first testss I wrote, I took some code from a course on Backbone developed by [Girl Develop It SF](https://www.meetup.com/Girl-Develop-It-San-Francisco/) and tried to adapt it to my needs:
 * [Backbone 101](http://www.teaching-materials.org/backbone/#/)
-* The food and calories reported in the app were taken from the CalorieKing database:
-* [CalorieKing - Food Database](http://www.calorieking.com/foods/)
+* To refactor the app, I started from a simple `Hello, world!` page writing piece by piece the code taken from this post:
+* [Adrian Mejia - Backbone.JS for Absolute Beginners - Getting Started (Part1: Intro)](http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/)
+* Learn how to render something in a Backbone JS View after getting its value from an asynchronous AJAX request:
+* [Stackoverflow - AJAX request in Backbone View render function](http://stackoverflow.com/questions/17113263/ajax-request-in-backbone-view-render-function)

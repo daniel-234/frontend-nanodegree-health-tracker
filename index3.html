@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Health Tracker</title>
+	</head>
+	<body>
+		<div id="container">Loading...</div>
+
+		<!-- Library files -->
+		<!-- jQuery Google CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<!-- jQuery local fallback -->
+		<script src="lib/jquery-3.1.1.min.js"></script>
+		<script src="lib/underscore-min.js"></script>
+		<script src="lib/backbone-min.js"></script>
+		<script src="lib/handlebars.js"></script>
+
+		<!-- Backbone code -->
+		<script type="text/javascript">
+			var AppView = Backbone.View.extend({
+				// The element associated with the View, where content will be rendered
+				el: '#container',
+				// Call initialize when this view is instantiated
+				initialize: function() {
+					this.render();
+				},
+				render: function() {
+					// Use jQuery to get the 'el' element in this View and set its HTML
+					// content to 'Hello, world!'
+					this.$el.html('Hello, world!');
+				}
+			});
+
+			// Initialize the View.
+			var appView = new AppView();
+		</script>
+	</body>
+</html>

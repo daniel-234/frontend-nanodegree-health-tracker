@@ -23,14 +23,18 @@
 			var AppView = Backbone.View.extend({
 				// The element associated with the View, where content will be rendered
 				el: '#container',
+				// Add a JS Undescore template, that can seem an unnecessary solution in this case,
+				// but will help to create dynamic rendering when things get more complicated.
+				// Template has the placeholder 'who' that will be substituted later in our code.
+				template: _.template('<h3>Hello, <%= who %></h3>'),
 				// Call initialize when this view is instantiated
 				initialize: function() {
 					this.render();
 				},
 				render: function() {
 					// Use jQuery to get the 'el' element in this View and set its HTML
-					// content to 'Hello, world!'
-					this.$el.html('Hello, world!');
+					// content to the template string, assigning a value to the placeholder 'who'.
+					this.$el.html(this.template({who: 'world!'}));
 				}
 			});
 

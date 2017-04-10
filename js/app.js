@@ -1,4 +1,4 @@
-var templateString = '<h3>I really like <%= who %>.</h3><h3>Lets\'s see how many calories it got.' +
+var templateString = '<h3>I really like <%= who %>.</h3><h3>Lets\'s see how many calories it has.' +
 	' Uhm, it has <%= cal %>!</h3>';
 var AppView = Backbone.View.extend({
 	// The element associated with the View, where content will be rendered

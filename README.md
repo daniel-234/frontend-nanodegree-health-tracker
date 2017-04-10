@@ -47,3 +47,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Adrian Mejia - Backbone JS for Absolute Beginners - Getting Started (Patt 2: Models, Collections and Views)](http://adrianmejia.com/blog/2012/09/13/backbone-js-for-absolute-beginners-getting-started-part-2/)
 * Learn how to render something in a Backbone JS View after getting its value from an asynchronous AJAX request:
 * [Stackoverflow - AJAX request in Backbone View render function](http://stackoverflow.com/questions/17113263/ajax-request-in-backbone-view-render-function)
+* Some articles helped me solve the problem of moving the AJAX call from the View to the Model and separate concerns according to the MV* pattern:
+* [Stackoverflow - Backbone set Model inside AJAX request](http://stackoverflow.com/questions/17485915/backbone-set-model-inside-ajax-request)
+* [Stackoverflow - Reload Backbone View after AJAX request, how?](http://stackoverflow.com/questions/29437140/reload-backbone-view-after-ajax-request-how)
+* [BarDev - Re-Learning BackboneJS - Binding Models to Views](https://www.bardev.com/2012/12/03/re-learning-backbone-js-binding-views-to-models/)

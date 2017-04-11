@@ -9,42 +9,41 @@ app.FoodItem = Backbone.Model.extend({
 		itemName: 'Prova',
 		itemCalories: '',
 		itemQuantity: 1
+	},
+	initialize: function() {
+		// console.log(get('itemName'));
+		this.getFoodData();
+	},
+	getFoodData: function() {
+		// URL to query the Nutritionix API, copied from the 'Get Started' section of their website.
+		var queryUrl = 'https://api.nutritionix.com/v1_1/search/mcdonalds?results=0:2&' +
+			'fields=item_name,brand_name,item_id,nf_calories&appId=497ef47e&appKey=790e824a496fcc65e9fa3132a5d2d8fb';
+		// var itemName,
+		// 	itemCalories;
+		// Store the value of `this` inside the View, to use it later inside the callback function.
+		var model = this;
+		$.ajax({
+			url: queryUrl,
+			type: 'get',
+			dataType: 'json',
+			success: function(result) {
+				console.log(result);
+				model.set({
+					brandName: result.hits[0].fields.brand_name,
+					itemName: result.hits[0].fields.item_name,
+					itemCalories: result.hits[0].fields.nf_calories,
+					itemQuantity: result.hits[0].fields.nf_serving_size_qty
+				});
+				console.log(model.itemName);
+				console.log(this.itemName);
+				// itemName = result.hits[0].fields.item_name;
+				// itemCalories = result.hits[0].fields.nf_calories;
+				// // Use jQuery to get the 'el' element in this View and set its HTML content
+				// // to the template string, assigning a value to the placeholders 'who' and 'cal.
+				// that.$el.html(that.template({who: itemName, cal: itemCalories}));
+			}
+		});
 	}
-	// },
-	// initialize: function() {
-	// 	// console.log(get('itemName'));
-	// 	this.getFoodData();
-	// },
-	// getFoodData: function() {
-	// 	// URL to query the Nutritionix API, copied from the 'Get Started' section of their website.
-	// 	var queryUrl = 'https://api.nutritionix.com/v1_1/search/mcdonalds?results=0:2&' +
-	// 		'fields=item_name,brand_name,item_id,nf_calories&appId=497ef47e&appKey=790e824a496fcc65e9fa3132a5d2d8fb';
-	// 	// var itemName,
-	// 	// 	itemCalories;
-	// 	// Store the value of `this` inside the View, to use it later inside the callback function.
-	// 	var model = this;
-	// 	$.ajax({
-	// 		url: queryUrl,
-	// 		type: 'get',
-	// 		dataType: 'json',
-	// 		success: function(result) {
-	// 			console.log(result);
-	// 			model.set({
-	// 				brandName: result.hits[0].fields.brand_name,
-	// 				itemName: result.hits[0].fields.item_name,
-	// 				itemCalories: result.hits[0].fields.nf_calories,
-	// 				itemQuantity: result.hits[0].fields.nf_serving_size_qty
-	// 			});
-	// 			console.log(model.itemName);
-	// 			console.log(this.itemName);
-	// 			// itemName = result.hits[0].fields.item_name;
-	// 			// itemCalories = result.hits[0].fields.nf_calories;
-	// 			// // Use jQuery to get the 'el' element in this View and set its HTML content
-	// 			// // to the template string, assigning a value to the placeholders 'who' and 'cal.
-	// 			// that.$el.html(that.template({who: itemName, cal: itemCalories}));
-	// 		}
-	// 	});
-	// }
 });
 
 app.FoodItems = Backbone.Collection.extend({
@@ -53,14 +52,14 @@ app.FoodItems = Backbone.Collection.extend({
 			'fields=item_name,brand_name,item_id,nf_calories&appId=497ef47e&appKey=790e824a496fcc65e9fa3132a5d2d8fb'
 });
 
-// app.foodItems = new app.FoodItems();
-// app.foodItems.fetch({
-// 	success: function(response) {
-// 		processData(response);
-// 		console.log(response.toJSON());
-// 		console.log(response.toJSON()[0].hits[0].fields.brand_name);
-// 	}
-// });
+app.foodItems = new app.FoodItems();
+app.foodItems.fetch({
+	success: function(response) {
+		processData(response);
+		console.log(response.toJSON());
+		console.log(response.toJSON()[0].hits[0].fields.brand_name);
+	}
+});
 
 app.AppView = Backbone.View.extend({
 	// The element associated with the View, where content will be injected.
@@ -77,17 +76,8 @@ app.AppView = Backbone.View.extend({
 	// Call initialize when this view is instantiated.
 	initialize: function() {
 		console.log(this.model);
-		console.log(this.collection);
 		// console.log(app.FoodItem.get('itemName'));
-		this.listenTo(this.collection, 'change reset', this.render, this);
-		this.collection.fetch({
-			reset: true,
-			success: function(response) {
-				processData(response);
-				console.log(response.toJSON());
-				console.log(response.toJSON()[0].hits[0].fields.brand_name);
-			}
-		});
+		this.listenTo(this.model, 'change', this.render);
 		// if (this.model.has('itemName')) {
 		// 	this.render();
 		// }
@@ -114,23 +104,12 @@ app.AppView = Backbone.View.extend({
 		// 		that.$el.html(that.template({who: itemName, cal: itemCalories}));
 		// 	}
 		// });
-		console.log(this.collection);
-		console.log(this.collection.models[0].attributes.hits[0].fields.item_name);
-		console.log(this.collection.models[0].attributes.hits[1].fields.item_name);
+		console.log(this.model.toJSON());
 		// this.$el.html(this.template(this.model.toJSON()));
-		// this.$el.html(this.template({
-		// 	which: this.model.get('itemName'),
-		// 	cal: this.model.get('itemCalories')
-		// }));
-		/* TODO
-		 * Add results to collection as models. Here it is just replicating the JSON data.
-		 */
 		this.$el.html(this.template({
-			which: this.collection.models[0].attributes.hits[0].fields.item_name,
-			cal: this.collection.models[0].attributes.hits[0].fields.nf_calories
+			which: this.model.get('itemName'),
+			cal: this.model.get('itemCalories')
 		}));
-
-		// return this;
 	}
 });
 
@@ -157,9 +136,4 @@ function processData(response) {
 
 // Initialize the View.
 app.foodItem = new app.FoodItem();
-app.foodItems = new app.FoodItems();
-app.foodItems.reset();
-app.appView = new app.AppView({
-	// model: app.foodItem
-	collection: app.foodItems
-});
+app.appView = new app.AppView({ model: app.foodItem });

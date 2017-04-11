@@ -1,8 +1,7 @@
 // Create a Namespace for our app.
 var app = app || {};
 
-var templateString = '<h3>I really like <%= who %>.</h3><h3>Lets\'s see how many calories it has.' +
-	' Uhm, it has <%= cal %>!</h3>';
+// var templateString = ;
 
 app.FoodItem = Backbone.Model.extend({
 	defaults: {
@@ -55,10 +54,10 @@ app.AppView = Backbone.View.extend({
 	// [Adrian Majia - Backbone JS for Absolute Beginners Part 2](http://adrianmejia.com/...
 	// ...blog/2012/09/13/backbone-js-for-absolute-beginners-getting-started-part-2/#view-el)
 	el: '#container',
-	// Add a JS Undescore template, that can seem an unnecessary solution in this case,
+	// Add a JS Undescore template, that can seem an unnecessary solution in this simple case,
 	// but will help to create dynamic rendering when things get more complicated.
-	// Template has the placeholder 'who' that will be substituted later in our code.
-	template: _.template(templateString),
+	// Template has the placeholders 'which' and 'cal' that will be substituted later in our code.
+	template: _.template($('#foot-template').html()),
 	// Call initialize when this view is instantiated.
 	initialize: function() {
 		console.log(this.model);
@@ -93,7 +92,7 @@ app.AppView = Backbone.View.extend({
 		console.log(this.model.toJSON());
 		// this.$el.html(this.template(this.model.toJSON()));
 		this.$el.html(this.template({
-			who: this.model.get('itemName'),
+			which: this.model.get('itemName'),
 			cal: this.model.get('itemCalories')
 		}));
 	}

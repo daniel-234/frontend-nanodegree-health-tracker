@@ -51,3 +51,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - Backbone set Model inside AJAX request](http://stackoverflow.com/questions/17485915/backbone-set-model-inside-ajax-request)
 * [Stackoverflow - Reload Backbone View after AJAX request, how?](http://stackoverflow.com/questions/29437140/reload-backbone-view-after-ajax-request-how)
 * [BarDev - Re-Learning BackboneJS - Binding Models to Views](https://www.bardev.com/2012/12/03/re-learning-backbone-js-binding-views-to-models/)
+* Improving UnderscoreJS templates in Backbone JS:
+* [Coderbeerstartups - How to improve templates in BackboneJS - Learning BackboneJS](http://codebeerstartups.com/2012/12/how-to-improve-templates-in-backbone-js-learning-backbone-js/)
+* [Stackoverflow - How to use Underscore.JS as a template engine?](http://stackoverflow.com/questions/4778881/how-to-use-underscore-js-as-a-template-engine)

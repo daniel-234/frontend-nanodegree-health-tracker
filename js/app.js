@@ -46,6 +46,21 @@ app.FoodItem = Backbone.Model.extend({
 	}
 });
 
+app.FoodItems = Backbone.Collection.extend({
+	model: app.FoodItem,
+	url: 'https://api.nutritionix.com/v1_1/search/mcdonalds?results=0:2&' +
+			'fields=item_name,brand_name,item_id,nf_calories&appId=497ef47e&appKey=790e824a496fcc65e9fa3132a5d2d8fb'
+});
+
+app.foodItems = new app.FoodItems();
+app.foodItems.fetch({
+	success: function(response) {
+		processData(response);
+		console.log(response.toJSON());
+		console.log(response.toJSON()[0].hits[0].fields.brand_name);
+	}
+});
+
 app.AppView = Backbone.View.extend({
 	// The element associated with the View, where content will be injected.
 	// The `this.el` reference can be created from a View's `el`, `tagName`, `className`,
@@ -97,6 +112,27 @@ app.AppView = Backbone.View.extend({
 		}));
 	}
 });
+
+function processData(response) {
+	console.log(response.toJSON());
+	console.log(response.toJSON()[0].hits[0].fields.brand_name);
+	for(var i = 0; i < 2; i++) {
+		app.foodItems.add({
+			brandName: response.toJSON()[0].hits[i].fields.brand_name,
+			itemName: response.toJSON()[0].hits[i].fields.item_name,
+			itemCalories: response.toJSON()[0].hits[i].fields.nf_calories,
+			itemQuantity: response.toJSON()[0].hits[i].fields.nf_serving_size_qty
+		});
+	}
+
+	console.log(app.foodItems.length);
+
+	// Log each itemName attribute. Cut the first stored result in collection as
+	// it is not a useful value.
+	for(var i = 1; i <= 2; i++) {
+		console.log(app.foodItems.models[i].get('itemName'));
+	}
+}
 
 // Initialize the View.
 app.foodItem = new app.FoodItem();

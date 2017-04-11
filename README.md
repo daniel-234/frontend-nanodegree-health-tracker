@@ -54,3 +54,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Improving UnderscoreJS templates in Backbone JS:
 * [Coderbeerstartups - How to improve templates in BackboneJS - Learning BackboneJS](http://codebeerstartups.com/2012/12/how-to-improve-templates-in-backbone-js-learning-backbone-js/)
 * [Stackoverflow - How to use Underscore.JS as a template engine?](http://stackoverflow.com/questions/4778881/how-to-use-underscore-js-as-a-template-engine)
+* Populate Collection from external JSON:
+* [Stackoverflow - Backbone populate Collection from external JSON](http://stackoverflow.com/questions/20591083/backbone-populate-collection-from-external-json)
+* [Michielvaneerd - Backbone and JSONP](https://gist.github.com/michielvaneerd/5989839)

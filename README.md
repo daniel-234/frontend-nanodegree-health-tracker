@@ -57,3 +57,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Populate Collection from external JSON:
 * [Stackoverflow - Backbone populate Collection from external JSON](http://stackoverflow.com/questions/20591083/backbone-populate-collection-from-external-json)
 * [Michielvaneerd - Backbone and JSONP](https://gist.github.com/michielvaneerd/5989839)
+* [Stackoverflow - BackboneJS fetch a Collection of models and populate them](http://stackoverflow.com/questions/17604374/backbone-js-fetch-a-collection-of-models-and-render-them)

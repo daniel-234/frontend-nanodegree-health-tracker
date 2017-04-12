@@ -58,3 +58,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - Backbone populate Collection from external JSON](http://stackoverflow.com/questions/20591083/backbone-populate-collection-from-external-json)
 * [Michielvaneerd - Backbone and JSONP](https://gist.github.com/michielvaneerd/5989839)
 * [Stackoverflow - BackboneJS fetch a Collection of models and populate them](http://stackoverflow.com/questions/17604374/backbone-js-fetch-a-collection-of-models-and-render-them)
+* These articles explain well the new syntax rules introduced when the code was refactored and separated into different files, following the code organization of the todoMVC app developed by Addy Osmani:
+* [Stackoverflow - IIFE construct in JavaScript](http://stackoverflow.com/questions/8228281/what-is-the-function-construct-in-javascript)
+* [Stackoverflow - What does `use strict` do in JavaScript and what is the reasoning behind it?](http://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it)
+* [Stackoverflow - What does (function $ jQuery mean)?](http://stackoverflow.com/questions/2937227/what-does-function-jquery-mean)

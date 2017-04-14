@@ -5,28 +5,40 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Health Tracker</title>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<div id="container">Loading...</div>
-		<script type="text/javascript" id="foot-template">
-			<h3>I really like <%= which %>.</h3>
-			<h3>Lets's see how many calories it has. Uhm, it has <%= cal %>!</h3>
+		<!-- HTML for the user interface -->
+		<section id="foods">
+			<header>
+				<h1 class="appTitle">Health Tracker</h1>
+			</header>
+		</section>
+
+		<!-- Underscore template -->
+		<script id="food-template" type="text/template">
+			<ul>
+				<li><%= brandName %></li>
+				<li><%= itemName %></li>
+				<li><%= itemCalories %></li>
+				<li><%= itemQuantity %></li>
+			</ul>
 		</script>
 
-		<!-- Library files -->
+		<!-- Dependency files -->
+		<!-- Libraries -->
 		<!-- jQuery Google CDN -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<!-- jQuery local fallback -->
 		<script src="lib/jquery-3.1.1.min.js"></script>
 		<script src="lib/underscore-min.js"></script>
 		<script src="lib/backbone-min.js"></script>
-		<script src="lib/handlebars.js"></script>
 
-		<!-- Backbone code -->
-		<script src="js/models/foodItem.js"></script>
-		<script src="js/collections/foodItems.js"></script>
-		<script src="js/views/foodItem-view.js"></script>
-		<script src="js/views/app-view.js"></script>
+		<!-- Backbone files -->
+		<script src="js/models/food.js"></script>
+		<script src="js/collections/foodList.js"></script>
+		<script src="js/views/food.js"></script>
+		<script src="js/views/foodList.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>

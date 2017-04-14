@@ -62,3 +62,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - IIFE construct in JavaScript](http://stackoverflow.com/questions/8228281/what-is-the-function-construct-in-javascript)
 * [Stackoverflow - What does `use strict` do in JavaScript and what is the reasoning behind it?](http://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it)
 * [Stackoverflow - What does (function $ jQuery mean)?](http://stackoverflow.com/questions/2937227/what-does-function-jquery-mean)
+* The meaning of an alias to `this` in JavaScript:
+* [Stackoverflow - What does `var that = this` mean in JavaScript?](http://stackoverflow.com/questions/4886632/what-does-var-that-this-mean-in-javascript)
+* Adding new Models to a Backbone Collection:
+* [Stackoverflow - Adding new Models to a Backbone Collection](http://stackoverflow.com/questions/18298877/adding-new-models-to-a-backbone-collection-not-replace)

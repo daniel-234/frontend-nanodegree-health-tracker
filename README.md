@@ -66,3 +66,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - What does `var that = this` mean in JavaScript?](http://stackoverflow.com/questions/4886632/what-does-var-that-this-mean-in-javascript)
 * Adding new Models to a Backbone Collection:
 * [Stackoverflow - Adding new Models to a Backbone Collection](http://stackoverflow.com/questions/18298877/adding-new-models-to-a-backbone-collection-not-replace)
+* To proceed in the app development I needed to move from a fixed URL to a string that could be made up taking as input a query inserted by the user. I relied on some answers on Stackoverflow to adapt my code:
+* [Stackoverflow - How can I pass properties into a Backbone Model which I do not wish to be treated as attributes?](http://stackoverflow.com/questions/7084651/how-can-i-pass-properties-into-a-backbone-model-which-i-do-not-wish-to-be-treate)
+* [Stackoverflow - Backbone passing parameters to a Backbone URL](http://stackoverflow.com/questions/20004615/backbone-passing-parameters-to-a-model-url)
+* [Stackoverflow - What is `options` in BackboneJS?](http://stackoverflow.com/questions/8997714/what-is-options-in-backbone-js)

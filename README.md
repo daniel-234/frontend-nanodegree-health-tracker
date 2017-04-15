@@ -70,3 +70,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - How can I pass properties into a Backbone Model which I do not wish to be treated as attributes?](http://stackoverflow.com/questions/7084651/how-can-i-pass-properties-into-a-backbone-model-which-i-do-not-wish-to-be-treate)
 * [Stackoverflow - Backbone passing parameters to a Backbone URL](http://stackoverflow.com/questions/20004615/backbone-passing-parameters-to-a-model-url)
 * [Stackoverflow - What is `options` in BackboneJS?](http://stackoverflow.com/questions/8997714/what-is-options-in-backbone-js)
+* How to add an array of models to a collection:
+* [Stackoverflow - Backbone event: add array of models to collection](http://stackoverflow.com/questions/21879345/backbone-event-add-array-of-models-to-collection)

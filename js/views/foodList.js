@@ -7,7 +7,12 @@ var url2 = 'https://api.nutritionix.com/v1_1/search/' + 'mcdonalds' + '?results=
 app.FoodListView = Backbone.View.extend({
 	el: '#foods',
 
+	events: {
+		'keypress #new-food': 'getFoodItemData'
+	},
+
 	initialize: function() {
+		this.$input = this.$('#new-food');
 		this.collection = new app.FoodList();
 		this.food1 = new app.Food({url: url1});
 		this.food2 = new app.Food({url: url2});
@@ -29,5 +34,10 @@ app.FoodListView = Backbone.View.extend({
 			model: item
 		});
 		this.$el.append(foodView.render().el);
+	},
+	getFoodItemData: function(e) {
+		if(e.which === ENTER_KEY && this.$input.val().trim()) {
+			console.log(this.$input.val());
+		}
 	}
 });

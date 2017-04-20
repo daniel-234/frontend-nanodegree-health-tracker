@@ -29,21 +29,15 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* As a first step I wanted to get accustomed with the Nutritionix API search, so I just made an AJAX call to it and displayed the first item that was returned from the result. The query I used can be found on the Nutritionix API v1.1 Documentation Quick Start guide:
-* [Nutritionix API v1.1 Documentation - Quick Start](https://developer.nutritionix.com/docs/v1_1)
 * I took some code from these two answers on Stackoverflow to make the AJAX request:
 * [Stackoverflow - jQuery async and JSON data](http://stackoverflow.com/questions/5644451/jquery-async-and-json-data)
 * [Stackoverflow - Append AJAX result to div](http://stackoverflow.com/questions/29432997/append-ajax-result-to-div)
-* A new application always starts with a blank sheet. As I decided which steps to follow to build this one, I worked through examples and advices in the book 'Developing Backbone.js Applications' written by Addy Osmani. Much of the initial code is taken from that book and as I learned to develop my application following a Behavior Driven Development (BDD) approach I replicated some of his code:
-* [Addy Osmani - Developing Backbone.js Applications](https://addyosmani.com/backbone-fundamentals/)
-* A very helpful resource on AJAX requests:
-* [Stackoverflow - How do I return the response from an asynchronous call?](http://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call)
-* To develop the tests for the View and to adjust the first testss I wrote, I took some code from a course on Backbone developed by [Girl Develop It SF](https://www.meetup.com/Girl-Develop-It-San-Francisco/) and tried to adapt it to my needs:
-* [Backbone 101](http://www.teaching-materials.org/backbone/#/)
 * To refactor the app, I started from a simple `Hello, world!` page writing piece by piece the code taken from this post:
 * [Adrian Mejia - Backbone.JS for Absolute Beginners - Getting Started (Part1: Intro)](http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/)
 * And then revisited the Backbone JS modules in this second article:
 * [Adrian Mejia - Backbone JS for Absolute Beginners - Getting Started (Patt 2: Models, Collections and Views)](http://adrianmejia.com/blog/2012/09/13/backbone-js-for-absolute-beginners-getting-started-part-2/)
+* A very helpful resource on AJAX requests:
+* [Stackoverflow - How do I return the response from an asynchronous call?](http://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call)
 * Learn how to render something in a Backbone JS View after getting its value from an asynchronous AJAX request:
 * [Stackoverflow - AJAX request in Backbone View render function](http://stackoverflow.com/questions/17113263/ajax-request-in-backbone-view-render-function)
 * Some articles helped me solve the problem of moving the AJAX call from the View to the Model and separate concerns according to the MV* pattern:
@@ -71,3 +65,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - What is `options` in BackboneJS?](http://stackoverflow.com/questions/8997714/what-is-options-in-backbone-js)
 * How to add an array of models to a collection:
 * [Stackoverflow - Backbone event: add array of models to collection](http://stackoverflow.com/questions/21879345/backbone-event-add-array-of-models-to-collection)
+* How to make a POST request in JSON:
+* [Stackoverflow - Backbone Post JSON instead of Get](http://stackoverflow.com/questions/21564806/backbone-post-json-instead-of-get)
+* [Stackoverflow - jQuery AJAX How to send JSON instead of QueryString](http://stackoverflow.com/questions/12693947/jquery-ajax-how-to-send-json-instead-of-querystring)
+* Error in BackboneJS: a URL property or function must be specified in BackboneJS
+* [Stackoverflow - A URL property or function must be specified - Error in Backbone](http://stackoverflow.com/questions/6030677/a-url-property-or-function-must-be-specified-error-in-backbone-js)

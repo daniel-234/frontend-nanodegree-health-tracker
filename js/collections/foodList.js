@@ -24,7 +24,7 @@ app.FoodList = Backbone.Collection.extend({
 			// If serving weight is null (for example a cup of coffee is returned),
 			// replace it with the serving size.
 			var servingQuantity = item.fields.nf_serving_weight_grams !== null ?
-					item.fields.nf_serving_weight_grams : item.fields.nf_serving_size_qty + ;
+					item.fields.nf_serving_weight_grams : item.fields.nf_serving_size_qty;
 
 			// Uncomment to check that this field is not null in every object.
 			// console.log(servingQuantity);

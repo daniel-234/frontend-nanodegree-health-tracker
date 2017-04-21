@@ -10,6 +10,6 @@ app.Food = Backbone.Model.extend({
 		brandName: '',
 		itemName: '',
 		itemCalories: '',
-		itemWeight: ''
+		itemQuantity: ''
 	}
 });

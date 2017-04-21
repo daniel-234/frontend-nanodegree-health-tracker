@@ -70,3 +70,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - jQuery AJAX How to send JSON instead of QueryString](http://stackoverflow.com/questions/12693947/jquery-ajax-how-to-send-json-instead-of-querystring)
 * Error in BackboneJS: a URL property or function must be specified in BackboneJS
 * [Stackoverflow - A URL property or function must be specified - Error in Backbone](http://stackoverflow.com/questions/6030677/a-url-property-or-function-must-be-specified-error-in-backbone-js)
+* The most useful resources I used to learn about fetching from a server and parsing a response into a collection of models in Backbone:
+* [Stackoverflow - BackboneJS fetch a collection of models and render them](http://stackoverflow.com/questions/17604374/backbone-js-fetch-a-collection-of-models-and-render-them)
+* [Stackoverflow - Backbone collection length always set to one with nested views](http://stackoverflow.com/questions/18007118/backbone-collection-length-always-set-to-one-with-nested-views)
+* [Stackoverflow - Why is this Backbone model's attribute undefined when I try to get it?](http://stackoverflow.com/questions/22100774/why-is-this-backbone-models-attribute-undefined-when-i-try-to-get-it)
+* [Stackoverflow - Handling response from BackboneJS collection using fetch](http://stackoverflow.com/questions/12992460/handeling-response-from-backbone-js-collection-using-fetch)
+* [Stackoverflow - BackboneJS fecth not actually setting attributes](http://stackoverflow.com/questions/9584870/backbone-js-fetch-not-actually-setting-attributes)
+* [Stackoverflow - Backbone model fetch returns data but does not update model](http://stackoverflow.com/questions/14025415/backbone-model-fetch-returns-data-but-does-not-update-model)
+* [Stackoverflow - How to parse a Backbone collection in a template view](http://stackoverflow.com/questions/14573900/how-to-parse-a-backbone-collection-in-a-template-view)
+* [Miguel Mota - Getting started with BackboneJS](https://miguelmota.com/blog/getting-started-with-backbonejs/)

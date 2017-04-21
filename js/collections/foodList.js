@@ -29,13 +29,16 @@ app.FoodList = Backbone.Collection.extend({
 		_.each(response.hits, function(item, index) {
 			// console.log(item.fields);
 			console.log(item.fields.item_name);
+			var servingQuantity = item.fields.nf_serving_weight_grams !== null ? item.fields.nf_serving_weight_grams : item.fields.nf_serving_size_qty;
+			console.log(servingQuantity);
 
 			var member = new self.model();
 			member.set('_id', index);
 			member.set('brandName', item.fields.brand_name);
 			member.set('itemName', item.fields.item_name);
 			member.set('itemCalories', item.fields.nf_calories);
-			member.set('itemWeight', item.fields.nf_serving_weight_grams);
+			// member.set('itemWeight', item.fields.nf_serving_weight_grams);
+			member.set('itemWeight', servingQuantity);
 
 			self.push(member);
 		});

@@ -42,7 +42,9 @@ app.FoodListView = Backbone.View.extend({
 						'item_name',
 						'brand_name',
 						'nf_calories',
-						'nf_serving_weight_grams']
+						'nf_serving_weight_grams',
+						'nf_serving_size_qty'
+					]
 				}),
 				reset: true,
 				// success: function(response) {
@@ -80,6 +82,7 @@ app.FoodListView = Backbone.View.extend({
 
 				success: function() {
 					console.log(self.collection);
+					self.render();
 				}
 
 
@@ -188,13 +191,14 @@ app.FoodListView = Backbone.View.extend({
 		// this.render();
 	},
 	render: function() {
-		console.log('A');
-		console.log(this.collection);
-		console.log(this.collection.length);
+		// console.log('A');
+		// console.log(this.collection);
+		// console.log(this.collection.length);
 		// app.foodList.each(function(item) {
 		this.collection.each(function(item) {
+			console.log(item);
 			this.renderFood(item);
-			console.log(item.attributes.hits);
+			// console.log(item.attributes.hits);
 		}, this);
 		// console.log(app.foodList.length);
 		// this.$list.html('');
@@ -214,9 +218,9 @@ app.FoodListView = Backbone.View.extend({
 	// },
 	renderFood: function(item) {
 		var foodView = new app.FoodView({
-			model: item.attributes.hits
+			model: item
 		});
-		console.log(foodView);
+		// console.log(foodView);
 		this.$el.append(foodView.render().el);
 	}
 

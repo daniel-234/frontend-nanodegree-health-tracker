@@ -1,25 +1,34 @@
-/* Replicates exactly the CSS used in the Book Library Exercise
- * developed by Addy Osmani.
- */
 body {
 	background-color: #eee;
+	width: 100%;
+}
+
+.container {
+	width: 100%;
 }
 
 .appTitle {
 	text-align: center;
 }
 
+.table {
+	border-collapse: separate;
+	border-spacing: 2em;
+}
+
+.table > tbody > tr > td {
+	text-align: center;
+	vertical-align: middle;
+}
+
 .foodContainer {
 	outline: 1px solid #aaa;
-	width: 350px;
-	height: 158px;
 	background-color: #fff;
-	float: left;
 	margin: 5px;
 }
 
-.foodContainer ul {
-	/* Display list without bullet points */
+/*.foodContainer ul {
+	 Display list without bullet points
 	list-style-type: none;
 	margin-bottom: 0;
-}
+}*/

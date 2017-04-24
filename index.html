@@ -5,34 +5,55 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Health Tracker</title>
+		<!-- Bootstrap CSS CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Bootstrap CSS local fallback -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<!-- HTML for the user interface -->
-		<section id="foods">
-			<header>
-				<h1 class="appTitle">Health Tracker</h1>
-				<!-- TODO -->
-				<!-- Implement input functionality in Collection View and uncomment -->
+		<div class="container">
+			<main>
+				<section id="foods">
+					<header>
+						<h1 class="appTitle">Health Tracker</h1>
+						<!-- TODO -->
+						<!-- Implement input functionality in Collection View and uncomment -->
 
-				<!-- <input id="new-food" placeholder="What food item are you tracking?" autofocus=""> -->
-			</header>
-			<section id="main">
-				<ul id="food-list"></ul>
-			</section>
-		</section>
-
-		<!-- TODO -->
-		<!-- Add quantities -->
+						<!-- <input id="new-food" placeholder="What food item are you tracking?" autofocus=""> -->
+					</header>
+					<section id="main">
+						<table class="table">
+							<thead>
+								<tr class="col-xs-12">
+									<th class="col-xs-3">Brand</th>
+									<th class="col-xs-3">Item</th>
+									<th class="col-xs-3">Calories</th>
+									<th class="col-xs-3">Quantity</th>
+								</tr>
+							</thead>
+							<tbody id="food-items"></tbody>
+						</table>
+					</section>
+				</section>
+			</main>
+		</div>
 
 		<!-- Underscore template -->
 		<script id="food-template" type="text/template">
-			<ul>
-				<li><%= brandName %></li>
-				<li><%= itemName %></li>
-				<li><%= itemCalories %></li>
-				<li><%= itemQuantity %></li>
-			</ul>
+			<!-- <tr>
+				<td class="col-xs-3"><%= brandName %></td>
+				<td class="col-xs-3"><%= itemName %></td>
+				<td class="col-xs-3"><%= itemCalories %></td>
+				<td class="col-xs-3"><%= itemQuantity %></td>
+			</tr>
+ -->
+			<tr>
+				<td><%= brandName %></td>
+				<td><%= itemName %></td>
+				<td><%= itemCalories %></td>
+				<td><%= itemQuantity %></td>
+			</tr>
 		</script>
 
 		<!-- Dependency files -->

@@ -79,3 +79,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - Backbone model fetch returns data but does not update model](http://stackoverflow.com/questions/14025415/backbone-model-fetch-returns-data-but-does-not-update-model)
 * [Stackoverflow - How to parse a Backbone collection in a template view](http://stackoverflow.com/questions/14573900/how-to-parse-a-backbone-collection-in-a-template-view)
 * [Miguel Mota - Getting started with BackboneJS](https://miguelmota.com/blog/getting-started-with-backbonejs/)
+* Bootstrap Responsive Tables:
+* [Stakoverflow - How to set the size of a column in a Bootstrap responsive table](http://stackoverflow.com/questions/25385289/how-to-set-the-size-of-a-column-in-a-bootstrap-responsive-table)
+* [Stackoverflow - Render HTML table with underscore template engine using a Backbone complex model](http://stackoverflow.com/questions/10257401/render-html-table-with-underscore-template-engine-using-a-backbone-complex-model)

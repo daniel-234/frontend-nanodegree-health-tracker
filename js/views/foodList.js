@@ -3,7 +3,7 @@ var app = app || {};
 // Food Collection View
 // --------------------
 app.FoodListView = Backbone.View.extend({
-	el: '#foods',
+	el: '#food-items',
 
 	// Delegated event for creating new items.
 	events: {
@@ -17,7 +17,7 @@ app.FoodListView = Backbone.View.extend({
 		// // Reference to the input form.
 		// this.$input = this.$('#new-food');
 		// // Reference to the food list.
-		// this.$list = $('#food-list');
+		this.$list = $('#food-list');
 
 		// Bind this collection to a `reset` or `change` event on this
 		// collection and call `this.render` if it happens.
@@ -68,7 +68,10 @@ app.FoodListView = Backbone.View.extend({
 			model: item
 		});
 		// Append it to the `el` element defined above.
-		this.$el.append(foodView.render().el);
+		// this.$el.append(foodView.render().el);
+		var $tr = foodView.render().$el;
+		this.$el.append($tr);
+		// this.$el.append(foodView.render().el);
 	}
 
 	// TODO

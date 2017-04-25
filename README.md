@@ -86,3 +86,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - How to use UnderscoreJS as a template engine](http://stackoverflow.com/questions/4778881/how-to-use-underscore-js-as-a-template-engine)
 * [Stackoverflow - Backbone table view consuming row - how to structure](http://stackoverflow.com/questions/10328687/backbone-table-view-consuming-row-view-how-to-structure)
 * [Stackoverflow - Loops in UnderscoreJS template](http://stackoverflow.com/questions/9853039/loops-in-underscore-js-template)
+* It took some time to master the proper way to render a table using BackboneJS and an UnderscoreJS template. Here are two responses on Stackoverflow that helped me fix the issue:
+* [Stackoverflow - Rendering a table with Backbone](http://stackoverflow.com/questions/34304648/rendering-a-table-with-backbone)
+* [Stackoverflow - BackboneJS and rendering table](http://stackoverflow.com/questions/13071554/backbone-js-and-rendering-table)

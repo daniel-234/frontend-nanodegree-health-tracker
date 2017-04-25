@@ -11,10 +11,10 @@ body {
 	text-align: center;
 }
 
-.table {
+/*.table {
 	border-collapse: separate;
 	border-spacing: 2em;
-}
+}*/
 
 .table > tbody > tr > td {
 	text-align: center;
@@ -26,9 +26,3 @@ body {
 	background-color: #fff;
 	margin: 5px;
 }
-
-/*.foodContainer ul {
-	 Display list without bullet points
-	list-style-type: none;
-	margin-bottom: 0;
-}*/

@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<main>
+			<!-- <main> -->
 				<section id="foods">
 					<header>
 						<h1 class="appTitle">Health Tracker</h1>
@@ -23,37 +23,30 @@
 						<!-- <input id="new-food" placeholder="What food item are you tracking?" autofocus=""> -->
 					</header>
 					<section id="main">
+						<!-- TODO -->
+						<!-- Implement table responsiveness and see how to split screen to show more info -->
 						<table class="table">
 							<thead>
-								<tr class="col-xs-12">
-									<th class="col-xs-3">Brand</th>
-									<th class="col-xs-3">Item</th>
-									<th class="col-xs-3">Calories</th>
-									<th class="col-xs-3">Quantity</th>
+								<tr>
+									<th class="col-xs-3 text-center">Brand</th>
+									<th class="col-xs-3 text-center">Item</th>
+									<th class="col-xs-3 text-center">Calories</th>
+									<th class="col-xs-3 text-center">Quantity</th>
 								</tr>
 							</thead>
-							<tbody id="food-items"></tbody>
+							<tbody id="food-items"> </tbody>
 						</table>
 					</section>
 				</section>
-			</main>
+			<!-- </main> -->
 		</div>
 
 		<!-- Underscore template -->
 		<script id="food-template" type="text/template">
-			<!-- <tr>
-				<td class="col-xs-3"><%= brandName %></td>
-				<td class="col-xs-3"><%= itemName %></td>
-				<td class="col-xs-3"><%= itemCalories %></td>
-				<td class="col-xs-3"><%= itemQuantity %></td>
-			</tr>
- -->
-			<tr>
 				<td><%= brandName %></td>
 				<td><%= itemName %></td>
 				<td><%= itemCalories %></td>
 				<td><%= itemQuantity %></td>
-			</tr>
 		</script>
 
 		<!-- Dependency files -->

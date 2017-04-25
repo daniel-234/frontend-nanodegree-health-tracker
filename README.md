@@ -82,3 +82,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Bootstrap Responsive Tables:
 * [Stakoverflow - How to set the size of a column in a Bootstrap responsive table](http://stackoverflow.com/questions/25385289/how-to-set-the-size-of-a-column-in-a-bootstrap-responsive-table)
 * [Stackoverflow - Render HTML table with underscore template engine using a Backbone complex model](http://stackoverflow.com/questions/10257401/render-html-table-with-underscore-template-engine-using-a-backbone-complex-model)
+* How to use UnderscoreJS as a template engine:
+* [Stackoverflow - How to use UnderscoreJS as a template engine](http://stackoverflow.com/questions/4778881/how-to-use-underscore-js-as-a-template-engine)
+* [Stackoverflow - Backbone table view consuming row - how to structure](http://stackoverflow.com/questions/10328687/backbone-table-view-consuming-row-view-how-to-structure)
+* [Stackoverflow - Loops in UnderscoreJS template](http://stackoverflow.com/questions/9853039/loops-in-underscore-js-template)

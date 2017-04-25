@@ -4,6 +4,7 @@ var app = app || {};
 // --------------
 app.FoodView = Backbone.View.extend({
 	// The DOM element for a food item is a div tag.
+	// el: '#food-items',
 	tagName: 'tr',
 	className: 'foodContainer',
 	// Cache the template function for a single item.

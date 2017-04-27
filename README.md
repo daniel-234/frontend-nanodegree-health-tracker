@@ -14,6 +14,8 @@ To load the app, download a copy of the project to your local machine and open t
 * [BackboneJS](http://backbonejs.org/) - A framework to supply structure to JavaScript-heavy applications
 * [jQuery](http://jquery.com/) - A JavaScript library for simpler HTML manipulation and event handling
 * [Nutritionix API](https://developer.nutritionix.com/docs/v1_1) - The third party API used to provide information to the user about calories
+* [stacktable.js](http://johnpolacek.github.io/stacktable.js/) - jQuery plugin for stacking tables on small screens
+* [enquire.js](http://wicky.nillia.ms/enquire.js/) - a JavaScript library for responding to CSS media queries
 
 ## Author
 
@@ -91,3 +93,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * It took some time to master the proper way to render a table using BackboneJS and an UnderscoreJS template. Here are two responses on Stackoverflow that helped me fix the issue:
 * [Stackoverflow - Rendering a table with Backbone](http://stackoverflow.com/questions/34304648/rendering-a-table-with-backbone)
 * [Stackoverflow - BackboneJS and rendering table](http://stackoverflow.com/questions/13071554/backbone-js-and-rendering-table)
+* The resources I used to find a solution to format the table on smaller screens:
+* [CSS-TRICKS - FooTable: a jQuery plugin for responsive data tables](https://css-tricks.com/footable-a-jquery-plugin-for-responsive-data-tables/)
+* [CSS-TRICKS - Responsive Data Table Roundup](https://css-tricks.com/responsive-data-table-roundup/)
+* [CSS-TRICKS - Responsive Data Tables](https://css-tricks.com/responsive-data-tables/)
+* [Cloud4 - Picking a Responsive Tables Solution](https://cloudfour.com/thinks/picking-responsive-tables-solution/)
+* [Stackoverflow - Optional JavaScript execution based on Media queries](http://stackoverflow.com/questions/13015719/optional-javascript-execution-based-on-media-queries)
+* [CSS-TRICKS - enquire.js - Media Query callbacks in JavaScript](https://css-tricks.com/enquire-js-media-query-callbacks-in-javascript/)

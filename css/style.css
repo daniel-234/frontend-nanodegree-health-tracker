@@ -26,3 +26,16 @@ body {
 	background-color: #fff;
 	margin: 5px;
 }
+
+/* Hide table header when screen size is small
+ * and the 'cardtable' function from 'stacktable.js'
+ * should be called.
+ */
+@media screen and (max-width: 450px) {
+	.table {
+		display: none;
+	}
+}
+
+/* TODO */
+/* Style card table */

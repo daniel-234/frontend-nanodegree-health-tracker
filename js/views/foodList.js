@@ -47,9 +47,14 @@ app.FoodListView = Backbone.View.extend({
 				}),
 				reset: true,
 				success: function() {
-					// Uncomment to check the collection.
+					// Uncomment to check the collection on the console.
 					// console.log(self.collection);
 					self.render();
+
+					// Check if the user is using a small screen (less than
+					// 450px) and in this case display the table as card table.
+					self.enquireScreen();
+
 				}
 				// TODO
 				// handle `error`
@@ -76,6 +81,19 @@ app.FoodListView = Backbone.View.extend({
 		// this.$el.append($tr);
 		this.$el.append(foodView.render().el);
 		// this.$list.append(foodView.render().el);
+	},
+
+	// Respond to a CSS Media Query using the JavaScript library 'enquire.js'
+	// and call the function 'cardtable' from the jQuery plugin 'stacktable.js'
+	// to display the table like cards.
+	enquireScreen: function() {
+		enquire.register('screen and (max-width: 450px)', {
+			// Triggered when a media query matches.
+			match: function() {
+				// console.log('Matched');
+				$('#food-table').cardtable();
+			}
+		});
 	}
 
 	// TODO

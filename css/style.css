@@ -37,5 +37,17 @@ body {
 	}
 }
 
-/* TODO */
-/* Style card table */
+/* Style card table.
+ * Override `stackable` style sheet.
+ */
+.table > tbody > tr > td {
+	text-align: left;
+}
+
+.st-key {
+	width: 29%;
+}
+
+.st-val {
+	width: 70%;
+}

@@ -27,6 +27,18 @@ body {
 	margin: 5px;
 }
 
+/* Style card table.
+ * Override `stackable` style sheet.
+ */
+.st-key {
+	width: 29%;
+	text-align: left;
+}
+
+.st-val {
+	width: 70%;
+}
+
 /* Hide table header when screen size is small
  * and the 'cardtable' function from 'stacktable.js'
  * should be called.
@@ -35,19 +47,4 @@ body {
 	.table {
 		display: none;
 	}
-}
-
-/* Style card table.
- * Override `stackable` style sheet.
- */
-.table > tbody > tr > td {
-	text-align: left;
-}
-
-.st-key {
-	width: 29%;
-}
-
-.st-val {
-	width: 70%;
 }

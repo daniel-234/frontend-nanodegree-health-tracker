@@ -2,7 +2,7 @@ var app = app || {};
 
 // TODO
 // Uncomment to handle command by the user when using input.
-// var ENTER_KEY = 13;
+var ENTER_KEY = 13;
 
 $(function () {
 

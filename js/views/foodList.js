@@ -4,12 +4,19 @@ var app = app || {};
 // --------------------
 app.FoodListView = Backbone.View.extend({
 	// el: '#main',
-	el: '#food-items',
-	// el: '#foods',
+	// el: '#food-items',
+
+
+	// Set `el` to #foods to make the View get the value of the input
+	// field. Setting `el` to '#food-items' as before it wasn't able
+	// to get it.
+	el: '#foods',
 	// tagName: 'table',
 
 	// Delegated event for creating new items.
 	events: {
+		// 'keypress #new-food': 'createFoodItem'
+		// 'change #new-food': 'createFoodItem'
 		'keypress #new-food': 'createFoodItem'
 	},
 
@@ -17,9 +24,10 @@ app.FoodListView = Backbone.View.extend({
 		// TODO
 		// Uncomment to implement the input functionality
 
-		// // Reference to the input form.
-		// this.$input = this.$('#new-food');
-		// // Reference to the food list.
+		// Reference to the input form.
+		this.$input = this.$('#new-food');
+		console.log(this.$input);
+		// Reference to the food list.
 		this.$list = $('#food-items');
 
 		// Bind this collection to a `reset` or `change` event on this
@@ -79,8 +87,8 @@ app.FoodListView = Backbone.View.extend({
 		// this.$el.append(foodView.render().el);
 		// var $tr = foodView.render().$el;
 		// this.$el.append($tr);
-		this.$el.append(foodView.render().el);
-		// this.$list.append(foodView.render().el);
+		// this.$el.append(foodView.render().el);
+		this.$list.append(foodView.render().el);
 	},
 
 	// Respond to a CSS Media Query using the JavaScript library 'enquire.js'
@@ -94,8 +102,18 @@ app.FoodListView = Backbone.View.extend({
 				$('#food-table').cardtable();
 			}
 		});
-	}
+	},
 
 	// TODO
 	// Handle input by the user.
+	createFoodItem: function(event) {
+		// if (event.which !== ENTER_KEY || !this.$input.val().trim()) {
+		// 	return;
+		// }
+		if (event.keyCode == 13) {
+			console.log('input value');
+		}
+
+
+	}
 });

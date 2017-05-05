@@ -39,6 +39,11 @@ body {
 	width: 70%;
 }
 
+#new-food {
+	width: 100%;
+	margin: 25px 0 15px 0;
+}
+
 /* Hide table header when screen size is small
  * and the 'cardtable' function from 'stacktable.js'
  * should be called.

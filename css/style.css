@@ -5,10 +5,12 @@ body {
 
 .container {
 	width: 100%;
+	max-width: 700px;
 }
 
 .appTitle {
 	text-align: center;
+	margin-top: 40px;
 }
 
 /*.table {
@@ -16,15 +18,34 @@ body {
 	border-spacing: 2em;
 }*/
 
+
 .table > tbody > tr > td {
 	text-align: center;
 	vertical-align: middle;
+	/*height: 60px;*/
+}
+
+.table > tbody > tr {
+	/*vertical-align: middle;*/
 }
 
 .foodContainer {
 	outline: 1px solid #aaa;
 	background-color: #fff;
 	margin: 5px;
+}
+
+.cell {
+	text-align: center;
+}
+
+.inner {
+	height: 38px;
+	/*width: 100%;*/
+	overflow: hidden;
+	/*display: table-cell;*/
+	text-align: center;
+	vertical-align: middle;
 }
 
 /* Style card table.

@@ -100,3 +100,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Cloud4 - Picking a Responsive Tables Solution](https://cloudfour.com/thinks/picking-responsive-tables-solution/)
 * [Stackoverflow - Optional JavaScript execution based on Media queries](http://stackoverflow.com/questions/13015719/optional-javascript-execution-based-on-media-queries)
 * [CSS-TRICKS - enquire.js - Media Query callbacks in JavaScript](https://css-tricks.com/enquire-js-media-query-callbacks-in-javascript/)
+* Here is an answer on Stackoverflow that gave me the hint to put a `div` inside a table cell to give it a fixed height:
+* [Stackoverflow - CSS How to make td a fixed height](http://stackoverflow.com/questions/5091179/css-how-to-make-td-a-fixed-height)
+* Thanks to this response on the Udacity Discussion Forum I could align vertically the div content, regardless of the text size:
+* [Udacity Discussions Forum - Unable to vertically align text in div inside table cell](https://discussions.udacity.com/t/unable-to-vertically-align-text-in-div-inside-table-cell/245965)

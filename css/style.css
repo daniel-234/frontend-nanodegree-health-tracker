@@ -36,16 +36,6 @@ body {
 
 }
 
-.table > tbody > tr {
-
-}
-
-.foodContainer {
-	outline: 1px solid #aaa;
-	background-color: #fff;
-	margin: 5px;
-}
-
 .cell {
 	text-align: center;
 	height: 54px;
@@ -84,5 +74,31 @@ body {
 @media screen and (max-width: 450px) {
 	.table {
 		display: none;
+		margin-bottom: 10px;
+	}
+
+	tbody > tr:nth-child(1),
+	tbody > tr:nth-child(3) {
+		display: none;
+	}
+
+	tbody > tr > td:nth-child(1) {
+		width: 15%;
+	}
+
+	tbody > tr > td:nth-child(2) {
+		width: 85%;
+	}
+
+	.cell {
+		height: 36px;
+	}
+
+	.inner {
+		max-height: 20px;
+	}
+
+	.foodContainer {
+		outline: 0.6px;
 	}
 }

@@ -13,12 +13,6 @@ body {
 	margin-top: 40px;
 }
 
-/*.table {
-	border-collapse: separate;
-	border-spacing: 2em;
-}*/
-
-
 .table > tbody > tr > td {
 	text-align: center;
 	vertical-align: middle;
@@ -30,17 +24,19 @@ body {
 	margin: 5px;
 }
 
-.table > tbody > tr > td {
-	text-align: center;
-	vertical-align: middle;
-
-}
-
+/* Give ach cell a fix height of 54px.
+ * This number should account for the inner div
+ * max height of 38 px plus the Bootstrap applied
+ * padding at the top and bottom of 8 px.
+ */
 .cell {
 	text-align: center;
 	height: 54px;
 }
 
+/* Give each div a max height of 38 px and hide
+ * content that exceeds it.
+ */
 .inner {
 	max-height: 38px;
 	overflow: hidden;
@@ -51,7 +47,6 @@ body {
 /* Style card table.
  * Override `stackable` style sheet.
  */
-
 .st-key {
 	width: 29%;
 	text-align: left;
@@ -66,22 +61,24 @@ body {
 	margin: 25px 0 15px 0;
 }
 
-/* Hide table header when screen size is small
- * and the 'cardtable' function from 'stacktable.js'
- * should be called.
+/* Set properties on smaller screens.
  */
-
 @media screen and (max-width: 450px) {
+	/* Hide table header. */
 	.table {
 		display: none;
 		margin-bottom: 10px;
 	}
 
+	/* Hide first and third row on each item. */
 	tbody > tr:nth-child(1),
 	tbody > tr:nth-child(3) {
 		display: none;
 	}
 
+	/* Change the percentage space available for
+	 * cells in a the same row.
+	 */
 	tbody > tr > td:nth-child(1) {
 		width: 15%;
 	}
@@ -90,6 +87,7 @@ body {
 		width: 85%;
 	}
 
+	/* Set div and table cells height. */
 	.cell {
 		height: 36px;
 	}

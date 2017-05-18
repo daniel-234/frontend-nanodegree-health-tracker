@@ -104,3 +104,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - CSS How to make td a fixed height](http://stackoverflow.com/questions/5091179/css-how-to-make-td-a-fixed-height)
 * Thanks to this response on the Udacity Discussion Forum I could align vertically the div content, regardless of the text size:
 * [Udacity Discussions Forum - Unable to vertically align text in div inside table cell](https://discussions.udacity.com/t/unable-to-vertically-align-text-in-div-inside-table-cell/245965)
+* Something that helped me on removing an unused view:
+* [Stackoverflow - Backbone remove view deletes the `el`](http://stackoverflow.com/questions/14083724/backbone-remove-view-deletes-the-el)
+* [Stackoverflow - Backbone not rendering the $el but can reference element directly](http://stackoverflow.com/questions/13690884/backbone-not-rendering-the-el-but-can-reference-element-directly)

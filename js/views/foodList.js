@@ -8,15 +8,13 @@ app.FoodListView = Backbone.View.extend({
 
 
 	// Set `el` to #foods to make the View get the value of the input
-	// field. Setting `el` to '#food-items' as before it wasn't able
-	// to get it.
+	// field and of table.
 	el: '#foods',
 	// tagName: 'table',
 
 	// Delegated event for creating new items.
 	events: {
-		// 'keypress #new-food': 'createFoodItem'
-		// 'change #new-food': 'createFoodItem'
+		// 'keypress #new-food': 'clear',
 		'keypress #new-food': 'createFoodItem'
 	},
 
@@ -34,43 +32,45 @@ app.FoodListView = Backbone.View.extend({
 		// collection and call `this.render` if it happens.
 		this.listenTo(this.collection, 'reset change', this.render);
 
-		this.collection = new app.FoodList();
-		var self = this;
 
-		this.collection.fetch({
-			url: this.collection.url,
-				type: 'post',
-				contentType: 'application/json',
-				data: JSON.stringify({
-					'appId': '497ef47e',
-					'appKey': '790e824a496fcc65e9fa3132a5d2d8fb',
-					'query': 'Starbucks OR frapp*',
-					'fields': [
-						'item_name',
-						'brand_name',
-						'nf_calories',
-						'nf_serving_weight_grams',
-						'nf_serving_size_qty'
-					]
-				}),
-				reset: true,
-				success: function() {
-					// Uncomment to check the collection on the console.
-					// console.log(self.collection);
-					self.render();
+		// this.collection = new app.FoodList();
+		// var self = this;
 
-					// Check if the user is using a small screen (less than
-					// 450px) and in this case display the table as card table.
-					self.enquireScreen();
+		// this.collection.fetch({
+		// 	url: this.collection.url,
+		// 		type: 'post',
+		// 		contentType: 'application/json',
+		// 		data: JSON.stringify({
+		// 			'appId': '497ef47e',
+		// 			'appKey': '790e824a496fcc65e9fa3132a5d2d8fb',
+		// 			'query': 'Starbucks OR frapp*',
+		// 			'fields': [
+		// 				'item_name',
+		// 				'brand_name',
+		// 				'nf_calories',
+		// 				'nf_serving_weight_grams',
+		// 				'nf_serving_size_qty'
+		// 			]
+		// 		}),
+		// 		reset: true,
+		// 		success: function() {
+		// 			// Uncomment to check the collection on the console.
+		// 			// console.log(self.collection);
+		// 			self.render();
 
-				}
-				// TODO
-				// handle `error`
-		});
+		// 			// Check if the user is using a small screen (less than
+		// 			// 450px) and in this case display the table as card table.
+		// 			self.enquireScreen();
+
+		// 		}
+		// 		// TODO
+		// 		// handle `error`
+		// });
 	},
 
 	// Render this View.
 	render: function() {
+		// this.clear();
 		// Call renderFood for every model in the collection.
 		this.collection.each(function(item) {
 			console.log(item);
@@ -107,13 +107,73 @@ app.FoodListView = Backbone.View.extend({
 	// TODO
 	// Handle input by the user.
 	createFoodItem: function(event) {
-		// if (event.which !== ENTER_KEY || !this.$input.val().trim()) {
-		// 	return;
-		// }
-		if (event.keyCode == 13) {
-			console.log('input value');
+		if (event.which !== ENTER_KEY || !this.$input.val().trim()) {
+			return;
 		}
 
 
+		console.log(this.$input.val().trim());
+
+		this.makeRequest(this.$input.val().trim());
+
+		// if (event.keyCode == 13) {
+		// 	console.log('input value');
+		// }
+
+
+	},
+
+	makeRequest: function(query) {
+		this.clear();
+		this.collection = new app.FoodList();
+		var self = this;
+
+		console.log(this.collection.toJSON());
+
+		this.collection.fetch({
+			url: this.collection.url,
+				type: 'post',
+				contentType: 'application/json',
+				data: JSON.stringify({
+					'appId': '497ef47e',
+					'appKey': '790e824a496fcc65e9fa3132a5d2d8fb',
+					'query': query,
+					// 'query': 'Starbucks OR frapp*',
+					'fields': [
+						'item_name',
+						'brand_name',
+						'nf_calories',
+						'nf_serving_weight_grams',
+						'nf_serving_size_qty'
+					]
+				}),
+				reset: true,
+				success: function() {
+
+					console.log(self.collection.toJSON());
+
+					// Uncomment to check the collection on the console.
+					// console.log(self.collection);
+					self.render();
+
+					// Check if the user is using a small screen (less than
+					// 450px) and in this case display the table as card table.
+					self.enquireScreen();
+
+				}
+				// TODO
+				// handle `error`
+		});
+	},
+
+	clear: function() {
+		if (!this.collection) {
+			return;
+		}
+		// _.each(_.clone(this.collection.models), function(model) {
+		// 	model.destroy();
+		// });
+		// this.collection.destroy();
+		this.$list.empty();
 	}
 });

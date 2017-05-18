@@ -10,6 +10,10 @@ app.FoodView = Backbone.View.extend({
 	// Cache the template function for a single item.
 	template: _.template($('#food-template').html()),
 
+	// initialize: function() {
+	// 	this.listenTo(this.model, 'change', this.render);
+	// },
+
 	render: function() {
 		// Uncomment to check the model property in the console.
 		// console.log(this.model);

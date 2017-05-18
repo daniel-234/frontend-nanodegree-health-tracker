@@ -3,74 +3,31 @@ var app = app || {};
 // Food Collection View
 // --------------------
 app.FoodListView = Backbone.View.extend({
-	// el: '#main',
-	// el: '#food-items',
-
-
 	// Set `el` to #foods to make the View get the value of the input
-	// field and of table.
+	// field and table.
 	el: '#foods',
-	// tagName: 'table',
 
 	// Delegated event for creating new items.
 	events: {
-		// 'keypress #new-food': 'clear',
 		'keypress #new-food': 'createFoodItem'
 	},
 
 	initialize: function() {
-		// TODO
-		// Uncomment to implement the input functionality
-
 		// Reference to the input form.
 		this.$input = this.$('#new-food');
 		console.log(this.$input);
 		// Reference to the food list.
 		this.$list = $('#food-items');
 
-		// Bind this collection to a `reset` or `change` event on this
-		// collection and call `this.render` if it happens.
+		// Bind this collection to a `reset` or `change` event on itself
+		// and call `this.render` if it happens.
 		this.listenTo(this.collection, 'reset change', this.render);
-
-
-		// this.collection = new app.FoodList();
-		// var self = this;
-
-		// this.collection.fetch({
-		// 	url: this.collection.url,
-		// 		type: 'post',
-		// 		contentType: 'application/json',
-		// 		data: JSON.stringify({
-		// 			'appId': '497ef47e',
-		// 			'appKey': '790e824a496fcc65e9fa3132a5d2d8fb',
-		// 			'query': 'Starbucks OR frapp*',
-		// 			'fields': [
-		// 				'item_name',
-		// 				'brand_name',
-		// 				'nf_calories',
-		// 				'nf_serving_weight_grams',
-		// 				'nf_serving_size_qty'
-		// 			]
-		// 		}),
-		// 		reset: true,
-		// 		success: function() {
-		// 			// Uncomment to check the collection on the console.
-		// 			// console.log(self.collection);
-		// 			self.render();
-
-		// 			// Check if the user is using a small screen (less than
-		// 			// 450px) and in this case display the table as card table.
-		// 			self.enquireScreen();
-
-		// 		}
-		// 		// TODO
-		// 		// handle `error`
-		// });
 	},
 
 	// Render this View.
 	render: function() {
-		// this.clear();
+		// Call the clear method every time the View renders itself.
+		this.clear();
 		// Call renderFood for every model in the collection.
 		this.collection.each(function(item) {
 			console.log(item);
@@ -83,12 +40,10 @@ app.FoodListView = Backbone.View.extend({
 		var foodView = new app.FoodView({
 			model: item
 		});
-		// Append it to the `el` element defined above.
-		// this.$el.append(foodView.render().el);
-		// var $tr = foodView.render().$el;
-		// this.$el.append($tr);
-		// this.$el.append(foodView.render().el);
-		this.$list.append(foodView.render().el);
+		// Append it to a container in the DOM.
+		// After calling `view.render()`, pass its `el` DOM element property
+		// into the jQuery `.append()` method of the `$list` object.
+		this.$list.append(foodView.render());
 	},
 
 	// Respond to a CSS Media Query using the JavaScript library 'enquire.js'
@@ -104,76 +59,67 @@ app.FoodListView = Backbone.View.extend({
 		});
 	},
 
-	// TODO
 	// Handle input by the user.
 	createFoodItem: function(event) {
 		if (event.which !== ENTER_KEY || !this.$input.val().trim()) {
 			return;
 		}
-
-
 		console.log(this.$input.val().trim());
-
+		// Call the makeRequest method passing in the input value.
 		this.makeRequest(this.$input.val().trim());
-
-		// if (event.keyCode == 13) {
-		// 	console.log('input value');
-		// }
-
-
 	},
 
+	// Make the request to the API passing in the query parameter.
 	makeRequest: function(query) {
-		this.clear();
+		// Create a new collection
 		this.collection = new app.FoodList();
+		// Cache the reference to this view.
 		var self = this;
+		// console.log(this.collection.toJSON());
 
-		console.log(this.collection.toJSON());
-
+		// Fetch the data.
 		this.collection.fetch({
 			url: this.collection.url,
-				type: 'post',
-				contentType: 'application/json',
-				data: JSON.stringify({
-					'appId': '497ef47e',
-					'appKey': '790e824a496fcc65e9fa3132a5d2d8fb',
-					'query': query,
-					// 'query': 'Starbucks OR frapp*',
-					'fields': [
-						'item_name',
-						'brand_name',
-						'nf_calories',
-						'nf_serving_weight_grams',
-						'nf_serving_size_qty'
-					]
-				}),
-				reset: true,
-				success: function() {
+			type: 'post',
+			contentType: 'application/json',
+			data: JSON.stringify({
+				'appId': '497ef47e',
+				'appKey': '790e824a496fcc65e9fa3132a5d2d8fb',
+				'query': query,
+				// 'query': 'Starbucks OR frapp*',
+				'fields': [
+					'item_name',
+					'brand_name',
+					'nf_calories',
+					'nf_serving_weight_grams',
+					'nf_serving_size_qty'
+				]
+			}),
+			reset: true,
+			success: function() {
+				// console.log(self.collection.toJSON());
+				// Uncomment to check the collection on the console.
+				// console.log(self.collection);
 
-					console.log(self.collection.toJSON());
-
-					// Uncomment to check the collection on the console.
-					// console.log(self.collection);
-					self.render();
-
-					// Check if the user is using a small screen (less than
-					// 450px) and in this case display the table as card table.
-					self.enquireScreen();
-
-				}
-				// TODO
-				// handle `error`
+				// Render this view.
+				self.render();
+				// Check if the user is using a small screen (less than
+				// 450px) and in this case display the table as card table.
+				self.enquireScreen();
+			}
+			// TODO
+			// handle `error`
 		});
 	},
 
+	// Remove the old view elements from the DOM.
 	clear: function() {
+		// If there is no collection yet, just return.
 		if (!this.collection) {
 			return;
 		}
-		// _.each(_.clone(this.collection.models), function(model) {
-		// 	model.destroy();
-		// });
-		// this.collection.destroy();
+		// Remove all child nodes of the $list element from the DOM
+		// using the jQuery `empty()` method.
 		this.$list.empty();
 	}
 });

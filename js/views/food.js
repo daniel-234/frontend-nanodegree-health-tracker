@@ -3,16 +3,11 @@ var app = app || {};
 // Food Item View
 // --------------
 app.FoodView = Backbone.View.extend({
-	// The DOM element for a food item is a div tag.
-	// el: '#food-items',
+	// Create a new `tr` for each Model View.
 	tagName: 'tr',
 	className: 'foodContainer',
 	// Cache the template function for a single item.
 	template: _.template($('#food-template').html()),
-
-	// initialize: function() {
-	// 	this.listenTo(this.model, 'change', this.render);
-	// },
 
 	render: function() {
 		// Uncomment to check the model property in the console.

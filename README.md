@@ -107,3 +107,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Something that helped me on removing an unused view:
 * [Stackoverflow - Backbone remove view deletes the `el`](http://stackoverflow.com/questions/14083724/backbone-remove-view-deletes-the-el)
 * [Stackoverflow - Backbone not rendering the $el but can reference element directly](http://stackoverflow.com/questions/13690884/backbone-not-rendering-the-el-but-can-reference-element-directly)
+* The `el` property of the view:
+* [Stackoverflow - What does the `el` do in view.render().el?](http://stackoverflow.com/questions/13659701/what-does-the-el-do-in-view-render-el)

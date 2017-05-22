@@ -43,7 +43,7 @@ app.FoodListView = Backbone.View.extend({
 		// Append it to a container in the DOM.
 		// After calling `view.render()`, pass its `el` DOM element property
 		// into the jQuery `.append()` method of the `$list` object.
-		this.$list.append(foodView.render());
+		this.$list.append(foodView.render().el);
 	},
 
 	// Respond to a CSS Media Query using the JavaScript library 'enquire.js'

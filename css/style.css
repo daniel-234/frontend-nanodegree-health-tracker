@@ -61,6 +61,10 @@ body {
 	margin: 25px 0 15px 0;
 }
 
+table > tbody > tr:hover {
+	background-color: #eee;
+}
+
 /* Set properties on smaller screens.
  */
 @media screen and (max-width: 450px) {
@@ -68,6 +72,10 @@ body {
 	.table {
 		display: none;
 		margin-bottom: 10px;
+	}
+
+	table > tbody > tr:hover {
+		background-color: #fff;
 	}
 
 	/* Hide first and third row on each item. */

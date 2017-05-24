@@ -106,9 +106,14 @@ app.FoodListView = Backbone.View.extend({
 				// Check if the user is using a small screen (less than
 				// 450px) and in this case display the table as card table.
 				self.enquireScreen();
+			},
+			// Handle error if the AJAX method fails to load the API.
+			error: function() {
+				// Display the error message on the console to let the user have more details about it.
+
+				// console.log(arguments[1].statusText);
+				alert("There was an error loading the API");
 			}
-			// TODO
-			// handle `error`
 		});
 	},
 

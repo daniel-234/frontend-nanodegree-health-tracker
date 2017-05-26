@@ -10,8 +10,8 @@ app.FoodListView = Backbone.View.extend({
 	// Delegated event for creating new items.
 	events: {
 		'keypress #new-food': 'createFoodItem',
-		'click .foodContainer': 'showItemOnSmallerScreens',
-		'click .small-only': 'enquireShowItem'
+		'click .foodContainer': 'showItem',
+		'click .small-only': 'showItemOnSmallerScreens'
 	},
 
 	initialize: function() {

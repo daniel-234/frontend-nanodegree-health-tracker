@@ -9,7 +9,9 @@ app.FoodListView = Backbone.View.extend({
 
 	// Delegated event for creating new items.
 	events: {
-		'keypress #new-food': 'createFoodItem'
+		'keypress #new-food': 'createFoodItem',
+		'click .foodContainer': 'showItemOnSmallerScreens',
+		'click .small-only': 'enquireShowItem'
 	},
 
 	initialize: function() {
@@ -67,6 +69,38 @@ app.FoodListView = Backbone.View.extend({
 		console.log(this.$input.val().trim());
 		// Call the makeRequest method passing in the input value.
 		this.makeRequest(this.$input.val().trim());
+	},
+
+	// Show the content of the clicked element on bigger screens.
+	showItem: function(e) {
+		enquire.register('screen and (min-width: 451px)', {
+			match: function() {
+				e.preventDefault();
+				// Get the clicked element.
+				var elem = $(e.currentTarget);
+				// Get the `div` element inside the second child of the clicked element.
+				var itemDiv = elem.find('div').eq(1);
+				// Get the content of the selected element.
+				var name = itemDiv.html();
+				console.log(name);
+			}
+		});
+	},
+
+	// Show the content of the clicked element on smaller screens
+	showItemOnSmallerScreens: function(e) {
+		enquire.register('screen and (max-width: 450px)', {
+			match: function() {
+				e.preventDefault();
+				// Get the clicked element.
+				var elem = $(e.currentTarget);
+				// Get the `div` element inside the second child of the clicked element.
+				var itemDiv = elem.find('div').eq(1);
+				// Get the content of the selected element.
+				var name = itemDiv.html();
+				console.log(name);
+			}
+		});
 	},
 
 	// Make the request to the API passing in the query parameter.

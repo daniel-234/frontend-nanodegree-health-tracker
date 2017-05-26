@@ -109,3 +109,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - Backbone not rendering the $el but can reference element directly](http://stackoverflow.com/questions/13690884/backbone-not-rendering-the-el-but-can-reference-element-directly)
 * The `el` property of the view:
 * [Stackoverflow - What does the `el` do in view.render().el?](http://stackoverflow.com/questions/13659701/what-does-the-el-do-in-view-render-el)
+* Some useful resources on Stackoverflow which I relied upon to get a click event:
+* [Stackoverflow - How to get attributes from the clicked element in Backbone event](https://stackoverflow.com/questions/15763500/how-to-get-attributes-from-the-clicked-element-in-backbone-event)
+* [Stackoverflow- jQuery get content between tags](https://stackoverflow.com/questions/6854009/jquery-get-content-between-div-tags)
+* [Stackoverflow - Get second child using jQuery](https://stackoverflow.com/questions/4727263/get-second-child-using-jquery)

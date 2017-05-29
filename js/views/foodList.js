@@ -10,8 +10,8 @@ app.FoodListView = Backbone.View.extend({
 	// Delegated event for creating new items.
 	events: {
 		'keypress #new-food': 'createFoodItem',
-		'click .foodContainer': 'showItem',
-		'click .small-only': 'showItemOnSmallerScreens'
+		'click .foodContainer': 'selectContent',
+		'click .small-only': 'selectContentOnSmallerScreens'
 	},
 
 	initialize: function() {
@@ -72,7 +72,7 @@ app.FoodListView = Backbone.View.extend({
 	},
 
 	// Show the content of the clicked element on bigger screens.
-	showItem: function(e) {
+	selectContent: function(e) {
 		enquire.register('screen and (min-width: 451px)', {
 			match: function() {
 				e.preventDefault();
@@ -88,7 +88,7 @@ app.FoodListView = Backbone.View.extend({
 	},
 
 	// Show the content of the clicked element on smaller screens
-	showItemOnSmallerScreens: function(e) {
+	selectContentOnSmallerScreens: function(e) {
 		enquire.register('screen and (max-width: 450px)', {
 			match: function() {
 				e.preventDefault();

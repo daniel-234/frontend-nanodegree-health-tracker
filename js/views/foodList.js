@@ -71,8 +71,11 @@ app.FoodListView = Backbone.View.extend({
 		this.makeRequest(this.$input.val().trim());
 	},
 
+	// TODO  clean code
 	// Show the content of the clicked element on bigger screens.
 	selectContent: function(e) {
+		var self = this;
+
 		enquire.register('screen and (min-width: 451px)', {
 			match: function() {
 				e.preventDefault();
@@ -83,12 +86,19 @@ app.FoodListView = Backbone.View.extend({
 				// Get the content of the selected element.
 				var name = itemDiv.html();
 				console.log(name);
+
+				console.log(self);
+
+				self.displayName(name);
 			}
 		});
 	},
 
+	// TODO  clean code
 	// Show the content of the clicked element on smaller screens
 	selectContentOnSmallerScreens: function(e) {
+		var self = this;
+
 		enquire.register('screen and (max-width: 450px)', {
 			match: function() {
 				e.preventDefault();
@@ -99,8 +109,22 @@ app.FoodListView = Backbone.View.extend({
 				// Get the content of the selected element.
 				var name = itemDiv.html();
 				console.log(name);
+
+				console.log(this);
+
+				self.displayName(name);
 			}
 		});
+	},
+
+	// TODO  adapt name to better purpose
+	// Display selected item in another div
+	displayName: function(name) {
+		// TODO  pass the element instead of name.
+		// Instantiate a View, passing as parameter the name of the selected element.
+		var selectedItemView = new app.DisplayItemView({ elem: name });
+
+		console.log(name);
 	},
 
 	// Make the request to the API passing in the query parameter.

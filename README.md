@@ -113,3 +113,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - How to get attributes from the clicked element in Backbone event](https://stackoverflow.com/questions/15763500/how-to-get-attributes-from-the-clicked-element-in-backbone-event)
 * [Stackoverflow- jQuery get content between tags](https://stackoverflow.com/questions/6854009/jquery-get-content-between-div-tags)
 * [Stackoverflow - Get second child using jQuery](https://stackoverflow.com/questions/4727263/get-second-child-using-jquery)
+* Create Backbone Views dynamically and pass them some paramenters:
+* [Stackoverflow - How do you dynamically crerate Backbone View elements?](https://stackoverflow.com/questions/10140787/how-do-you-dynamically-create-backbone-view-elements)
+* [Stackoverflow - How to pass parameters to a View](https://stackoverflow.com/questions/7803138/how-to-pass-parameters-to-a-view)

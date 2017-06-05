@@ -20,6 +20,7 @@ app.FoodListView = Backbone.View.extend({
 		console.log(this.$input);
 		// Reference to the food list.
 		this.$list = $('#food-items');
+		this.$selected = $('#selected-items');
 
 		// Bind this collection to a `reset` or `change` event on itself
 		// and call `this.render` if it happens.
@@ -108,6 +109,7 @@ app.FoodListView = Backbone.View.extend({
 				var itemDiv = elem.find('div').eq(1);
 				// Get the content of the selected element.
 				var name = itemDiv.html();
+
 				console.log(name);
 
 				console.log(this);
@@ -124,7 +126,12 @@ app.FoodListView = Backbone.View.extend({
 		// Instantiate a View, passing as parameter the name of the selected element.
 		var selectedItemView = new app.DisplayItemView({ elem: name });
 
+		this.$selected.append(selectedItemView.render().el);
+		// this.$selected.append(name);
+
 		console.log(name);
+		console.log(selectedItemView.render().options);
+		console.log(selectedItemView);
 	},
 
 	// Make the request to the API passing in the query parameter.

@@ -37,7 +37,19 @@
 					</table>
 				</section>
 			</section>
-			<section id="selected-items"></section>
+			<section id="selected-items">
+				<table class="table" id="selected-food-table">
+						<thead>
+							<tr>
+								<th class="col-xs-3 text-center">Brand</th>
+								<th class="col-xs-3 text-center">Item</th>
+								<th class="col-xs-3 text-center">Calories</th>
+								<th class="col-xs-3 text-center">Quantity</th>
+							</tr>
+						</thead>
+						<tbody id="selected-food-items"> </tbody>
+					</table>
+			</section>
 		</div>
 
 		<!-- Underscore template -->
@@ -49,7 +61,13 @@
 			<td class="cell"><div class="inner"><%= itemQuantity %></div></td>
 		</script>
 
-		<script id="item-template" type="text/template"></script>
+		<script id="item-template" type="text/template">
+			<!-- Cells with inner divs to fix their height -->
+			<td class="cell"><div class="inner"><%= brandName %></div></td>
+			<td class="cell"><div class="inner"><%= itemName %></div></td>
+			<td class="cell"><div class="inner"><%= itemCalories %></div></td>
+			<td class="cell"><div class="inner"><%= itemQuantity %></div></td>
+		</script>
 
 		<!-- Dependency files -->
 		<!-- Libraries -->
@@ -65,8 +83,10 @@
 		<!-- Backbone files -->
 		<script src="js/models/food.js"></script>
 		<script src="js/collections/foodList.js"></script>
+		<script src="js/collections/selectedFoodList.js"></script>
 		<script src="js/views/food.js"></script>
 		<script src="js/views/foodList.js"></script>
+		<script src="js/views/selectedFoodList.js"></script>
 		<script src="js/views/displayItem.js"></script>
 		<script src="js/app.js"></script>
 	</body>

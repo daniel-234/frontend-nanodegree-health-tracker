@@ -22,6 +22,11 @@ app.FoodListView = Backbone.View.extend({
 		this.$list = $('#food-items');
 		this.$selected = $('#selected-items');
 
+		this.selectedCollection = new app.SelectedFoodList();
+
+		this.selectedFoodListView = new app.SelectedFoodListView({ collection: this.selectedCollection });
+
+
 		// Bind this collection to a `reset` or `change` event on itself
 		// and call `this.render` if it happens.
 		this.listenTo(this.collection, 'reset change', this.render);
@@ -85,12 +90,21 @@ app.FoodListView = Backbone.View.extend({
 				// Get the `div` element inside the second child of the clicked element.
 				var itemDiv = elem.find('div').eq(1);
 				// Get the content of the selected element.
-				var name = itemDiv.html();
+				// var name = itemDiv.html();
+
+				var name = itemDiv;
+
 				console.log(name);
 
 				console.log(self);
 
-				self.displayName(name);
+				// self.displayName(name);
+
+				self.displayName(elem);
+
+				var id = elem.attr('name');
+				console.log(elem);
+				console.log(id);
 			}
 		});
 	},
@@ -115,6 +129,10 @@ app.FoodListView = Backbone.View.extend({
 				console.log(this);
 
 				self.displayName(name);
+
+
+				var id = elem.data('_id');
+				console.log(id);
 			}
 		});
 	},
@@ -124,14 +142,24 @@ app.FoodListView = Backbone.View.extend({
 	displayName: function(name) {
 		// TODO  pass the element instead of name.
 		// Instantiate a View, passing as parameter the name of the selected element.
-		var selectedItemView = new app.DisplayItemView({ elem: name });
+		// var selectedItemView = new app.DisplayItemView({ elem: name });
 
-		this.$selected.append(selectedItemView.render().el);
+		// this.$selected.append(selectedItemView.render().el);
 		// this.$selected.append(name);
 
 		console.log(name);
-		console.log(selectedItemView.render().options);
-		console.log(selectedItemView);
+		// console.log(selectedItemView.render().options);
+		// console.log(selectedItemView);
+
+
+		// this.selectedCollection = new app.SelectedFoodList();
+		this.selectedCollection.push(name);
+
+		console.log(this.selectedCollection.length);
+		console.log(this.selectedCollection.models[0]);
+
+		this.selectedFoodListView.render();
+
 	},
 
 	// Make the request to the API passing in the query parameter.

@@ -6,8 +6,20 @@ app.FoodView = Backbone.View.extend({
 	// Create a new `tr` for each Model View.
 	tagName: 'tr',
 	className: 'foodContainer',
+
 	// Cache the template function for a single item.
 	template: _.template($('#food-template').html()),
+
+	events: {
+		'click td': 'clicked'
+	},
+
+	clicked: function(e) {
+		e.preventDefault();
+		var name = this.model.get('itemName');
+		console.log(this.model);
+		console.log(name);
+	},
 
 	render: function() {
 		// Uncomment to check the model property in the console.

@@ -36,19 +36,22 @@
 						<tbody id="food-items"> </tbody>
 					</table>
 				</section>
-			</section>
-			<section id="selected-items">
-				<table class="table" id="selected-food-table">
-						<thead>
-							<tr>
-								<th class="col-xs-3 text-center">Brand</th>
-								<th class="col-xs-3 text-center">Item</th>
-								<th class="col-xs-3 text-center">Calories</th>
-								<th class="col-xs-3 text-center">Quantity</th>
-							</tr>
-						</thead>
-						<tbody id="selected-food-items"> </tbody>
-					</table>
+
+				<section id="selected-items">
+					<table class="table" id="selected-food-table">
+							<thead>
+								<tr>
+									<th class="col-xs-3 text-center"></th>
+									<th class="col-xs-3 text-center"></th>
+									<th class="col-xs-3 text-center"></th>
+									<th class="col-xs-3 text-center"></th>
+								</tr>
+							</thead>
+							<tbody id="selected-food-items"> </tbody>
+						</table>
+				</section>
+
+				<div class="selected-items-name" id="selected-name"></div>
 			</section>
 		</div>
 
@@ -61,13 +64,13 @@
 			<td class="cell"><div class="inner"><%= itemQuantity %></div></td>
 		</script>
 
-		<script id="item-template" type="text/template">
+		<!-- <script id="item-template" type="text/template"> -->
 			<!-- Cells with inner divs to fix their height -->
-			<td class="cell"><div class="inner"><%= brandName %></div></td>
+			<!-- <td class="cell"><div class="inner"><%= brandName %></div></td>
 			<td class="cell"><div class="inner"><%= itemName %></div></td>
 			<td class="cell"><div class="inner"><%= itemCalories %></div></td>
 			<td class="cell"><div class="inner"><%= itemQuantity %></div></td>
-		</script>
+		</script> -->
 
 		<!-- Dependency files -->
 		<!-- Libraries -->

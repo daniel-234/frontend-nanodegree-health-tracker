@@ -11,11 +11,14 @@ app.SelectedFoodListView = Backbone.View.extend({
 		this.$selected = $('#selected-food-items');
 
 
-		this.listenTo(this.collection, 'reset change', this.render);
+		this.listenTo(app.selected1, 'change add', this.render);
 	},
 
 	render: function() {
-		this.collection.each(function(item) {
+		// Call the clear method every time the View renders itself.
+		this.clear();
+		// Call renderFood for every model in the collection.
+		app.selected1.each(function(item) {
 			console.log(item);
 			this.renderFood(item);
 		}, this);
@@ -31,5 +34,15 @@ app.SelectedFoodListView = Backbone.View.extend({
 		console.log(foodView);
 
 		this.$selected.append(foodView.render().el);
+	},
+
+	clear: function() {
+		// If there is no collection yet, just return.
+		if (!app.selected1) {
+			return;
+		}
+		// Remove all child nodes of the $list element from the DOM
+		// using the jQuery `empty()` method.
+		this.$selected.empty();
 	}
 });

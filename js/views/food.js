@@ -19,6 +19,20 @@ app.FoodView = Backbone.View.extend({
 		var name = this.model.get('itemName');
 		console.log(this.model);
 		console.log(name);
+
+		// this.selectedCollection = new app.SelectedFoodList();
+
+		// selectedCollection.push(this.model);
+
+		var selectedItemView = new app.DisplayItemView({ elem: name });
+
+		console.log(this);
+		console.log(app.selected1);
+
+		app.selected1.push(this.model);
+
+		console.log(app.selected1);
+		console.log(app.selected1.length);
 	},
 
 	render: function() {

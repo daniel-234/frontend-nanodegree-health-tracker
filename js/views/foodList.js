@@ -9,9 +9,9 @@ app.FoodListView = Backbone.View.extend({
 
 	// Delegated event for creating new items.
 	events: {
-		'keypress #new-food': 'createFoodItem',
-		'click .foodContainer': 'selectContent',
-		'click .small-only': 'selectContentOnSmallerScreens'
+		'keypress #new-food': 'createFoodItem'
+		// 'click .foodContainer': 'selectContent',
+		// 'click .small-only': 'selectContentOnSmallerScreens'
 	},
 
 	initialize: function() {
@@ -22,9 +22,13 @@ app.FoodListView = Backbone.View.extend({
 		this.$list = $('#food-items');
 		this.$selected = $('#selected-items');
 
-		this.selectedCollection = new app.SelectedFoodList();
+		// this.selectedCollection = new app.SelectedFoodList();
 
-		this.selectedFoodListView = new app.SelectedFoodListView({ collection: this.selectedCollection });
+		// this.selectedFoodListView = new app.SelectedFoodListView({ collection: this.selectedCollection });
+
+		app.selected1 = new app.SelectedFoodList();
+
+		app.selectedFoodListView = new app.SelectedFoodListView({ collection: app.selected1 });
 
 
 		// Bind this collection to a `reset` or `change` event on itself

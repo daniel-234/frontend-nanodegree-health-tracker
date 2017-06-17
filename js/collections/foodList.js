@@ -32,7 +32,7 @@ app.FoodList = Backbone.Collection.extend({
 			// Define a new model.
 			var member = new self.model();
 			// Set its `id` attribute.
-			member.set('_id', index);
+			// member.set('_id', index);
 			// Set its default properties.
 			member.set('brandName', item.fields.brand_name);
 			member.set('itemName', item.fields.item_name);

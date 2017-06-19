@@ -20,19 +20,28 @@ app.FoodView = Backbone.View.extend({
 		console.log(this.model);
 		console.log(name);
 
+		console.log(this.model.get('itemCalories'));
+		app.calories += this.model.get('itemCalories');
+		console.log(app.calories);
+
 		// this.selectedCollection = new app.SelectedFoodList();
 
 		// selectedCollection.push(this.model);
 
-		var selectedItemView = new app.DisplayItemView({ elem: name });
+		// var selectedItemView = new app.DisplayItemView({ elem: name });
 
 		console.log(this);
 		console.log(app.selected1);
 
 		app.selected1.push(this.model);
 
+		app.selectedItemView.getCalories();
+		app.selectedItemView.render();
+
 		console.log(app.selected1);
 		console.log(app.selected1.length);
+
+
 	},
 
 	render: function() {

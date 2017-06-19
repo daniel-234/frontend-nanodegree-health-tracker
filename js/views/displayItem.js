@@ -15,16 +15,34 @@ app.DisplayItemView = Backbone.View.extend({
 		console.log(options);
 		this.options = options;
 		// this.render(options);
-		this.render();
+		// this.calories = 0;
+
+		// this.getCalories();
+		// this.render();
+		this.listenTo(app.selected1, 'change add', this.getCalories());
+		// this.listenTo(app.selected1, 'change add', this.render());
+	},
+
+	getCalories: function() {
+		// app.selected1.each(function(item) {
+		// 	calories += this.model.get('itemCalories');
+		// }, this);
+
+		console.log(app.calories);
+		console.log(app.selected1);
 	},
 
 	render: function() {
 
+		$('#selected-name').empty();
+
 		var markup;
 
-		markup = '<div>' + this.options.elem + '</div>';
+		// markup = '<div>' + this.options.elem + '</div>';
+		markup = '<div>' + app.calories + '</div>';
 
 		console.log(markup);
+		console.log(this.options.elem);
 
 		// this.$el.html(markup);
 

@@ -11,7 +11,19 @@ app.SelectedFoodListView = Backbone.View.extend({
 		this.$selected = $('#selected-food-items');
 
 
+		// var calories = 0;
+		// app.selected1.each(function(item) {
+		// 	this.getCalories();
+		// }, this);
+		// this.getCalories();
+
+		// var selectedItemView = new app.DisplayItemView({ elem: calories });
+
+		// var selectedItemView = new app.DisplayItemView({  });
+
+
 		this.listenTo(app.selected1, 'change add', this.render);
+		// this.listenTo(app.selected1, 'change add', this.render);
 	},
 
 	render: function() {
@@ -27,14 +39,20 @@ app.SelectedFoodListView = Backbone.View.extend({
 	renderFood: function(item) {
 
 		// Refactor
-		var foodView = new app.FoodView({
+		var selectedFoodView = new app.SelectedFoodView({
 			model: item
 		});
 
-		console.log(foodView);
+		console.log(selectedFoodView);
 
-		this.$selected.append(foodView.render().el);
+		this.$selected.append(selectedFoodView.render().el);
 	},
+
+	// getCalories: function() {
+	// 	app.selected1.each(function(item) {
+	// 		this.getCalories();
+	// 	}, this);
+	// },
 
 	clear: function() {
 		// If there is no collection yet, just return.

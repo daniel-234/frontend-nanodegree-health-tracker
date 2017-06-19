@@ -30,6 +30,23 @@ app.FoodListView = Backbone.View.extend({
 
 		app.selectedFoodListView = new app.SelectedFoodListView({ collection: app.selected1 });
 
+		// app.calories = this.model.get('itemCalories');
+
+		app.calories = 0;
+
+		app.selectedItemView = new app.DisplayItemView({  });
+
+
+		///////////////////
+		// TODO Move it from here!!! It is created before the click!
+		// app.calories = 0;
+
+		// var selectedItemView = new app.DisplayItemView({ elem: app.calories });
+
+		///////////////////
+
+
+
 
 		// Bind this collection to a `reset` or `change` event on itself
 		// and call `this.render` if it happens.

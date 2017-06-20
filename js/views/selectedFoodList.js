@@ -22,11 +22,19 @@ app.SelectedFoodListView = Backbone.View.extend({
 		// var selectedItemView = new app.DisplayItemView({  });
 
 
+
+		// app.calories = 0;
+
+		// app.selectedItemView = new app.DisplayItemView({  });
+
+
+
 		this.listenTo(app.selected1, 'change add', this.render);
 		// this.listenTo(app.selected1, 'change add', this.render);
 	},
 
 	render: function() {
+		console.log('render1');
 		// Call the clear method every time the View renders itself.
 		this.clear();
 		// Call renderFood for every model in the collection.

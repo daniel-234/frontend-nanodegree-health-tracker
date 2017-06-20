@@ -10,39 +10,42 @@ app.DisplayItemView = Backbone.View.extend({
 	// Cache the template function for a single item.
 	// template: _.template($('#item-template').html()),
 
-	initialize: function(options) {
-		console.log(options.elem);
-		console.log(options);
-		this.options = options;
+	initialize: function() {
+		// console.log(options.elem);
+		// console.log(options);
+		// this.options = options;
 		// this.render(options);
 		// this.calories = 0;
+		app.calories = 0;
 
 		// this.getCalories();
 		// this.render();
-		this.listenTo(app.selected1, 'change add', this.getCalories());
+		// this.listenTo(app.selected1, 'change add', this.getCalories());
 		// this.listenTo(app.selected1, 'change add', this.render());
 	},
 
 	getCalories: function() {
-		// app.selected1.each(function(item) {
-		// 	calories += this.model.get('itemCalories');
-		// }, this);
+		app.selected1.each(function(item) {
+			app.calories += item.get('itemCalories');
+			console.log('Ciao');
+		}, this);
 
-		console.log(app.calories);
-		console.log(app.selected1);
+	// 	// console.log(this.calories);
+	// 	// console.log(app.selected1);
+	// 	console.log('Ciao');
 	},
 
-	render: function() {
+	render: function(calories) {
 
 		$('#selected-name').empty();
 
 		var markup;
 
 		// markup = '<div>' + this.options.elem + '</div>';
-		markup = '<div>' + app.calories + '</div>';
+		markup = '<div>' + calories + '</div>';
 
 		console.log(markup);
-		console.log(this.options.elem);
+		// console.log(this.options.elem);
 
 		// this.$el.html(markup);
 

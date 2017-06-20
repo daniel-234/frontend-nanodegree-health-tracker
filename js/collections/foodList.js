@@ -6,9 +6,8 @@ app.FoodList = Backbone.Collection.extend({
 	// Model reference.
 	model: app.Food,
 	url: 'https://api.nutritionix.com/v1_1/search',
-	// Override Backbone's collection `parse` function
-	// because the object is different from what the collection
-	// expects.
+	// Override Backbone's collection `parse` function because
+	// the object is different from what the collection expects.
 	parse: function(response) {
 		// Uncomment to check the response.
 		console.log(response);

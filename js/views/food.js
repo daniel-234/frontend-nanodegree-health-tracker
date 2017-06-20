@@ -14,6 +14,10 @@ app.FoodView = Backbone.View.extend({
 		'click td': 'clicked'
 	},
 
+	initialize: function() {
+		var calories = 0;
+	},
+
 	clicked: function(e) {
 		e.preventDefault();
 		var name = this.model.get('itemName');
@@ -21,7 +25,7 @@ app.FoodView = Backbone.View.extend({
 		console.log(name);
 
 		console.log(this.model.get('itemCalories'));
-		app.calories += this.model.get('itemCalories');
+		// app.calories += this.model.get('itemCalories');
 		console.log(app.calories);
 
 		// this.selectedCollection = new app.SelectedFoodList();
@@ -35,13 +39,30 @@ app.FoodView = Backbone.View.extend({
 
 		app.selected1.push(this.model);
 
-		app.selectedItemView.getCalories();
-		app.selectedItemView.render();
+		this.getCalories();
+		console.log(app.calories);
+		// app.selectedItemView.render();
+		console.log(app.calories);
 
 		console.log(app.selected1);
 		console.log(app.selected1.length);
 
 
+	},
+
+	getCalories: function() {
+		// app.calories += this.model.get('itemCalories');
+		calories = 0;
+
+		app.selected1.each(function(item) {
+			calories += item.get('itemCalories');
+			console.log(item.get('itemCalories'));
+		}, this);
+
+		// app.calories = calories;
+		console.log(calories);
+
+		app.selectedItemView.render(calories);
 	},
 
 	render: function() {

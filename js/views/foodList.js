@@ -32,9 +32,18 @@ app.FoodListView = Backbone.View.extend({
 
 		// app.calories = this.model.get('itemCalories');
 
-		app.calories = 0;
+
+
+
+		// app.calories = 0;
 
 		app.selectedItemView = new app.DisplayItemView({  });
+
+		console.log('Prova1');
+
+
+
+
 
 
 		///////////////////
@@ -55,6 +64,7 @@ app.FoodListView = Backbone.View.extend({
 
 	// Render this View.
 	render: function() {
+		console.log('render');
 		// Call the clear method every time the View renders itself.
 		this.clear();
 		// Call renderFood for every model in the collection.

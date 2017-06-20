@@ -22,39 +22,12 @@ app.FoodListView = Backbone.View.extend({
 		this.$list = $('#food-items');
 		this.$selected = $('#selected-items');
 
-		// this.selectedCollection = new app.SelectedFoodList();
-
-		// this.selectedFoodListView = new app.SelectedFoodListView({ collection: this.selectedCollection });
 
 		app.selected1 = new app.SelectedFoodList();
 
 		app.selectedFoodListView = new app.SelectedFoodListView({ collection: app.selected1 });
 
-		// app.calories = this.model.get('itemCalories');
-
-
-
-
-		// app.calories = 0;
-
 		app.selectedItemView = new app.DisplayItemView({  });
-
-		console.log('Prova1');
-
-
-
-
-
-
-		///////////////////
-		// TODO Move it from here!!! It is created before the click!
-		// app.calories = 0;
-
-		// var selectedItemView = new app.DisplayItemView({ elem: app.calories });
-
-		///////////////////
-
-
 
 
 		// Bind this collection to a `reset` or `change` event on itself

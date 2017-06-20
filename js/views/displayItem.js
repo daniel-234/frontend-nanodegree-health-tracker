@@ -11,7 +11,7 @@ app.DisplayItemView = Backbone.View.extend({
 
 		var markup;
 
-		markup = '<div>' + calories + '</div>';
+		markup = '<div>' + 'Total calories:  ' + calories + '</div>';
 
 		console.log(markup);
 

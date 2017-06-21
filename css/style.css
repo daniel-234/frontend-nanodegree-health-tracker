@@ -44,18 +44,8 @@ body {
 	vertical-align: middle;
 }
 
-/* Style card table.
- * Override `stackable` style sheet.
+/* Style the input form.
  */
-.st-key {
-	width: 29%;
-	text-align: left;
-}
-
-.st-val {
-	width: 70%;
-}
-
 #new-food {
 	width: 100%;
 	margin: 25px 0 15px 0;
@@ -63,50 +53,6 @@ body {
 
 table > tbody > tr:hover {
 	background-color: #eee;
-}
-
-/* Set properties on smaller screens.
- */
-@media screen and (min-width: 2450px) {
-	/* Hide table header. */
-	.table {
-		display: none;
-		margin-bottom: 10px;
-	}
-
-	table > tbody > tr:hover {
-		background-color: #fff;
-	}
-
-	/* Hide first and third row on each item. */
-	tbody > tr:nth-child(1),
-	tbody > tr:nth-child(3) {
-		display: none;
-	}
-
-	/* Change the percentage space available for
-	 * cells in a the same row.
-	 */
-	tbody > tr > td:nth-child(1) {
-		width: 15%;
-	}
-
-	tbody > tr > td:nth-child(2) {
-		width: 85%;
-	}
-
-	/* Set div and table cells height. */
-	.cell {
-		height: 36px;
-	}
-
-	.inner {
-		max-height: 20px;
-	}
-
-	.foodContainer {
-		outline: 0.6px;
-	}
 }
 
 @media screen and (max-width: 450px) {

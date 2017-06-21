@@ -23,7 +23,7 @@ app.FoodView = Backbone.View.extend({
 
 		// Push the selected Model into the Collection of selected
 		// elements if not already there.
-		app.selected1.push(this.model);
+		app.selectedFoods.push(this.model);
 
 		this.getCalories();
 	},
@@ -31,7 +31,7 @@ app.FoodView = Backbone.View.extend({
 	getCalories: function() {
 		calories = 0;
 
-		app.selected1.each(function(item) {
+		app.selectedFoods.each(function(item) {
 			calories += item.get('itemCalories');
 			console.log(item.get('itemCalories'));
 		}, this);

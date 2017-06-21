@@ -10,8 +10,6 @@ app.FoodListView = Backbone.View.extend({
 	// Delegated event for creating new items.
 	events: {
 		'keypress #new-food': 'createFoodItem'
-		// 'click .foodContainer': 'selectContent',
-		// 'click .small-only': 'selectContentOnSmallerScreens'
 	},
 
 	initialize: function() {
@@ -22,10 +20,9 @@ app.FoodListView = Backbone.View.extend({
 		this.$list = $('#food-items');
 		this.$selected = $('#selected-items');
 
+		app.selectedFoods = new app.SelectedFoodList();
 
-		app.selected1 = new app.SelectedFoodList();
-
-		app.selectedFoodListView = new app.SelectedFoodListView({ collection: app.selected1 });
+		app.selectedFoodListView = new app.SelectedFoodListView({ collection: app.selectedFoods });
 
 		app.selectedItemView = new app.DisplayItemView({  });
 
@@ -58,19 +55,6 @@ app.FoodListView = Backbone.View.extend({
 		this.$list.append(foodView.render().el);
 	},
 
-	// Respond to a CSS Media Query using the JavaScript library 'enquire.js'
-	// and call the function 'cardtable' from the jQuery plugin 'stacktable.js'
-	// to display the table like cards.
-	enquireScreen: function() {
-		enquire.register('screen and (max-width: 450px)', {
-			// Triggered when a media query matches.
-			match: function() {
-				// console.log('Matched');
-				$('#food-table').cardtable();
-			}
-		});
-	},
-
 	// Handle input by the user.
 	createFoodItem: function(event) {
 		if (event.which !== ENTER_KEY || !this.$input.val().trim()) {
@@ -79,91 +63,6 @@ app.FoodListView = Backbone.View.extend({
 		console.log(this.$input.val().trim());
 		// Call the makeRequest method passing in the input value.
 		this.makeRequest(this.$input.val().trim());
-	},
-
-	// TODO  clean code
-	// Show the content of the clicked element on bigger screens.
-	selectContent: function(e) {
-		var self = this;
-
-		enquire.register('screen and (min-width: 451px)', {
-			match: function() {
-				e.preventDefault();
-				// Get the clicked element.
-				var elem = $(e.currentTarget);
-				// Get the `div` element inside the second child of the clicked element.
-				var itemDiv = elem.find('div').eq(1);
-				// Get the content of the selected element.
-				// var name = itemDiv.html();
-
-				var name = itemDiv;
-
-				console.log(name);
-
-				console.log(self);
-
-				// self.displayName(name);
-
-				self.displayName(elem);
-
-				var id = elem.attr('name');
-				console.log(elem);
-				console.log(id);
-			}
-		});
-	},
-
-	// TODO  clean code
-	// Show the content of the clicked element on smaller screens
-	selectContentOnSmallerScreens: function(e) {
-		var self = this;
-
-		enquire.register('screen and (max-width: 450px)', {
-			match: function() {
-				e.preventDefault();
-				// Get the clicked element.
-				var elem = $(e.currentTarget);
-				// Get the `div` element inside the second child of the clicked element.
-				var itemDiv = elem.find('div').eq(1);
-				// Get the content of the selected element.
-				var name = itemDiv.html();
-
-				console.log(name);
-
-				console.log(this);
-
-				self.displayName(name);
-
-
-				var id = elem.data('_id');
-				console.log(id);
-			}
-		});
-	},
-
-	// TODO  adapt name to better purpose
-	// Display selected item in another div
-	displayName: function(name) {
-		// TODO  pass the element instead of name.
-		// Instantiate a View, passing as parameter the name of the selected element.
-		// var selectedItemView = new app.DisplayItemView({ elem: name });
-
-		// this.$selected.append(selectedItemView.render().el);
-		// this.$selected.append(name);
-
-		console.log(name);
-		// console.log(selectedItemView.render().options);
-		// console.log(selectedItemView);
-
-
-		// this.selectedCollection = new app.SelectedFoodList();
-		this.selectedCollection.push(name);
-
-		console.log(this.selectedCollection.length);
-		console.log(this.selectedCollection.models[0]);
-
-		this.selectedFoodListView.render();
-
 	},
 
 	// Make the request to the API passing in the query parameter.
@@ -183,7 +82,6 @@ app.FoodListView = Backbone.View.extend({
 				'appId': '497ef47e',
 				'appKey': '790e824a496fcc65e9fa3132a5d2d8fb',
 				'query': query,
-				// 'query': 'Starbucks OR frapp*',
 				'fields': [
 					'item_name',
 					'brand_name',
@@ -200,10 +98,6 @@ app.FoodListView = Backbone.View.extend({
 
 				// Render this view.
 				self.render();
-				// Check if the user is using a small screen (less than
-				// 450px) and in this case display the table as card table.
-
-				// self.enquireScreen();
 			},
 			// Handle error if the AJAX method fails to load the API.
 			error: function() {

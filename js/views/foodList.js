@@ -19,13 +19,12 @@ app.FoodListView = Backbone.View.extend({
 		// Reference to the food list.
 		this.$list = $('#food-items');
 		this.$selected = $('#selected-items');
-
+		// Create a new Collection to store the selected items.
 		app.selectedFoods = new app.SelectedFoodList();
-
+		// Create a View to render the selected items collection.
 		app.selectedFoodListView = new app.SelectedFoodListView({ collection: app.selectedFoods });
-
-		app.selectedItemView = new app.DisplayItemView({  });
-
+		// Create a View to render the daily calories count.
+		app.displayCaloriesView = new app.DisplayCaloriesView();
 
 		// Bind this collection to a `reset` or `change` event on itself
 		// and call `this.render` if it happens.
@@ -67,7 +66,7 @@ app.FoodListView = Backbone.View.extend({
 
 	// Make the request to the API passing in the query parameter.
 	makeRequest: function(query) {
-		// Create a new collection
+		// Create a new collection to store the API response items.
 		this.collection = new app.FoodList();
 		// Cache the reference to this view.
 		var self = this;

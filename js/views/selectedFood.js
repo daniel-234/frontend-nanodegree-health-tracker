@@ -10,6 +10,7 @@ app.SelectedFoodView = Backbone.View.extend({
 	// Cache the template function for a single item.
 	template: _.template($('#food-template').html()),
 
+	// Render this View.
 	render: function() {
 		this.$el.html(this.template(this.model.attributes));
 

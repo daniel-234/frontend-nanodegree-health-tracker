@@ -14,8 +14,6 @@ To load the app, download a copy of the project to your local machine and open t
 * [BackboneJS](http://backbonejs.org/) - A framework to supply structure to JavaScript-heavy applications
 * [jQuery](http://jquery.com/) - A JavaScript library for simpler HTML manipulation and event handling
 * [Nutritionix API](https://developer.nutritionix.com/docs/v1_1) - The third party API used to provide information to the user about calories
-* [stacktable.js](http://johnpolacek.github.io/stacktable.js/) - jQuery plugin for stacking tables on small screens
-* [enquire.js](http://wicky.nillia.ms/enquire.js/) - a JavaScript library for responding to CSS media queries
 
 ## Author
 

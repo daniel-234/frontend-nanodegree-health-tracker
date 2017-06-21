@@ -132,23 +132,27 @@ table > tbody > tr:hover {
 		padding-left: 50%;
 	}
 
-	td:before {
+	/* Hide first row on each item. */
+	td:nth-of-type(1) {
+		display: none;
+	}
+
+	/*td:before {
 		position: absolute;
-		/*top: 6px;*/
 		left: 6px;
 		width: 45%;
 		padding-right: 10px;
 		white-space: nowrap;
-	}
+	}*/
 
 	.inner {
-		max-height: 24px;
+		max-height: 20px;
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
 	.cell {
-		height: 40px;
+		height: 36px;
 	}
 }

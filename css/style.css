@@ -24,7 +24,7 @@ body {
 	margin: 5px;
 }
 
-/* Give ach cell a fix height of 54px.
+/* Give each cell a fix height of 54px.
  * This number should account for the inner div
  * max height of 38 px plus the Bootstrap applied
  * padding at the top and bottom of 8 px.
@@ -67,7 +67,7 @@ table > tbody > tr:hover {
 
 /* Set properties on smaller screens.
  */
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 2450px) {
 	/* Hide table header. */
 	.table {
 		display: none;
@@ -106,5 +106,49 @@ table > tbody > tr:hover {
 
 	.foodContainer {
 		outline: 0.6px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr {
+		border: 1px solid #ccc;
+	}
+
+	td {
+		/* Behave like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		position: absolute;
+		/*top: 6px;*/
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	.inner {
+		max-height: 24px;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.cell {
+		height: 40px;
 	}
 }

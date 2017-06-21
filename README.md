@@ -119,3 +119,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Stackoverflow - Getting a TypeError: this.options is undefined](https://stackoverflow.com/questions/21738333/getting-a-typeerror-this-options-is-undefined)
 * Accessing a Model from a click event:
 * [LosTechies - Backbone.js: Getting the Model for a clicked element](https://lostechies.com/derickbailey/2011/10/11/backbone-js-getting-the-model-for-a-clicked-element/)
+* Some code I used for responsive data tables:
+* [CSS Tricks - Responsive data tables](https://css-tricks.com/responsive-data-tables/)
+* [Stackoverflow - How to center div vertically inside of absolutely positioned parent div](https://stackoverflow.com/questions/28455100/how-to-center-div-vertically-inside-of-absolutely-positioned-parent-div)

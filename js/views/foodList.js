@@ -16,9 +16,15 @@ app.FoodListView = Backbone.View.extend({
 		// Reference to the input form.
 		this.$input = this.$('#new-food');
 		console.log(this.$input);
-		// Reference to the food list.
+		// Store the food table body.
 		this.$list = $('#food-items');
-		this.$selected = $('#selected-items');
+
+		this.$foodTable = $('#food-table');
+
+		// Store the food table body.
+		// this.$selected = $('#selected-items');
+		// this.$selectedTable = $('#selected-food-table');
+
 		// Create a new Collection to store the selected items.
 		app.selectedFoods = new app.SelectedFoodList();
 		// Create a View to render the selected items collection.
@@ -36,6 +42,21 @@ app.FoodListView = Backbone.View.extend({
 		console.log('render');
 		// Call the clear method every time the View renders itself.
 		this.clear();
+
+		// Define a table header with 4 cells inside a row.
+		var tableHeader =
+			'<thead>' +
+				'<tr>' +
+					'<th class="col-xs-3 text-center">Brand</th>' +
+					'<th class="col-xs-3 text-center">Item</th>' +
+					'<th class="col-xs-3 text-center">Calories</th>' +
+					'<th class="col-xs-3 text-center">Quantity</th>' +
+				'</tr>' +
+			'</thead>';
+		// Append the header to the table as first element (the table
+		// has already been appended to the table in the DOM.
+		this.$foodTable.prepend(tableHeader);
+
 		// Call renderFood for every model in the collection.
 		this.collection.each(function(item) {
 			console.log(item);
@@ -114,8 +135,12 @@ app.FoodListView = Backbone.View.extend({
 		if (!this.collection) {
 			return;
 		}
+
 		// Remove all child nodes of the $list element from the DOM
 		// using the jQuery `empty()` method.
 		this.$list.empty();
+
+		// Remove the table header.
+		this.$foodTable.find('thead').remove();
 	}
 });

@@ -18,12 +18,8 @@ app.FoodListView = Backbone.View.extend({
 		console.log(this.$input);
 		// Store the food table body.
 		this.$list = $('#food-items');
-
+		// Store the food table reference.
 		this.$foodTable = $('#food-table');
-
-		// Store the food table body.
-		// this.$selected = $('#selected-items');
-		// this.$selectedTable = $('#selected-food-table');
 
 		// Create a new Collection to store the selected items.
 		app.selectedFoods = new app.SelectedFoodList();
@@ -139,7 +135,6 @@ app.FoodListView = Backbone.View.extend({
 		// Remove all child nodes of the $list element from the DOM
 		// using the jQuery `empty()` method.
 		this.$list.empty();
-
 		// Remove the table header.
 		this.$foodTable.find('thead').remove();
 	}

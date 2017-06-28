@@ -31,13 +31,9 @@ app.SelectedFoodListView = Backbone.View.extend({
 				'</tr>' +
 			'</thead>';
 
-		var tableBody = '<tbody id="selected-food-items"></tbody>';
 		// Append the header to the table as first element (the table
 		// has already been appended to the table in the DOM.
 		this.$selectedTable.prepend(tableHeader);
-		// this.$selectedTable.append(tableBody);
-
-
 		// Call renderFood for every model in the collection.
 		app.selectedFoods.each(function(item) {
 			console.log(item);

@@ -11,6 +11,7 @@ body {
 .appTitle {
 	text-align: center;
 	margin-top: 40px;
+	font-size: 56px;
 }
 
 .table > tbody > tr > td {
@@ -42,6 +43,10 @@ body {
 	overflow: hidden;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.daily-calories {
+	font-size: 16px;
 }
 
 /* Style the input form.
@@ -106,6 +111,10 @@ table > tbody > tr:hover {
 		left: 23%;
 	}
 
+	.appTitle {
+		font-size: 36px;
+	}
+
 	/* Re-style `inner` div on small screens. */
 	.inner {
 		position: relative;
@@ -123,6 +132,10 @@ table > tbody > tr:hover {
 	/* Shrink cells vertically. */
 	.cell {
 		height: 5px;
+	}
+
+	.daily-calories {
+		font-size: 14px;
 	}
 }
 
@@ -142,7 +155,19 @@ table > tbody > tr:hover {
 		left: 20%;
 	}
 
+	body {
+		font-size: 11px;
+	}
+
+	.appTitle {
+		font-size: 26px;
+	}
+
 	.item-calories {
 		padding-left: 18%;
+	}
+
+	.daily-calories {
+		font-size: 10px;
 	}
 }

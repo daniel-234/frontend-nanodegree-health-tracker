@@ -12,7 +12,7 @@ app.DisplayCaloriesView = Backbone.View.extend({
 		$('#selected-name').empty();
 
 		var markup;
-		markup = '<div>' + 'Total calories:  ' + calories + '</div>';
+		markup = '<div class="daily-calories">' + 'Total daily calories:  ' + calories + '</div>';
 		// console.log(markup);
 
 		$('#selected-name').append(markup);

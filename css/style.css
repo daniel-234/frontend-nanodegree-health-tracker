@@ -61,6 +61,19 @@ table > tbody > tr:hover {
 	background-color: #eee;
 }
 
+#info {
+	text-align: center;
+	font-size: 12px;
+}
+
+#info a {
+	color: inherit;
+}
+
+a {
+	text-decoration: underline;
+}
+
 /* Style tables on smaller screens. */
 @media screen and (max-width: 450px) {
 	/* Force tables not to be tables anymore
@@ -137,6 +150,10 @@ table > tbody > tr:hover {
 	.daily-calories {
 		font-size: 14px;
 	}
+
+	#info {
+		font-size: 10px;
+	}
 }
 
 /* Give special styles to the smallest devices. */
@@ -169,5 +186,9 @@ table > tbody > tr:hover {
 
 	.daily-calories {
 		font-size: 10px;
+	}
+
+	#info {
+		font-size: 8px;
 	}
 }
